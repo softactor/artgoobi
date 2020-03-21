@@ -1,0 +1,153 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 16, 2018, 11:25:18 AM
+    Author     : Tanveer Qureshee
+*/
+
+.form_fields_error{
+    display: inline-block;
+    float: right;
+    margin-left: 15px;
+    color: red;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+}
+.fetured_images_style_holder{
+    width: 100%;
+    float: left;
+}
+.fetured_images_style{
+    width: 200px;
+    margin: 5px;
+    padding: 5px;
+    float: left;
+} 
+.fetured_images_style img{
+    width: 187px;
+    cursor: pointer;
+}
+.ajax_image_delete_container{    
+    left: 117px;
+    width: 64px;
+    height: 35px;
+    position: relative;
+    top: -204px;
+}
+.ajax_image_delete_container button.ajax_image_delete{
+    display: none;
+    position: absolute;
+    z-index: 999999;
+    right: 0;
+}
+.fetured_images_style:hover button.ajax_image_delete{
+    display: block;
+}
+.front_art_work_wrapper {
+    /*border: 1px solid red;*/
+    /*padding: 0 1%;*/
+    width: 100%;
+    height: auto;
+    float: left;
+}
+div.artwork_image_holder{
+    float: left;
+    width: 356px;
+    height: 356px;
+    /*border: 1px solid #e5e5e5;*/
+    border-collapse: collapse;
+    margin: 5px 5px;
+}
+
+.inner{
+    display:table-cell;
+    height: 356px;
+    width: 356px;
+    vertical-align: middle;
+}
+div.artwork_image_holder img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto auto;
+    padding-bottom: 4%;
+}
+.artwork_image_authentication_section{
+    height: 765px;
+    width: 390px;
+    border-collapse: collapse;
+    margin: 1%;
+    background: lightgray;
+    padding-left: 3%;
+}
+.pending_artwork_details{
+    position: absolute;
+    bottom: 0;
+    margin: 1%;
+    height: 520px;
+    width: 360px;
+    /*border: 1px solid black;*/
+}
+.artwork_image_info_style{
+    color: #00aeef;
+}
+.artwork_image_info_style p{
+    margin: 0;
+}
+.ineer_image_edit_delete_section{
+    position: absolute;
+    width: 145px;
+    height: 37px;
+    padding: 2%;
+    /* border: 1px solid black; */
+    bottom: 0;
+    right: 65px;
+}
+
+img.exi_central_img
+{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto auto;
+}
+
+.outer
+{
+    border: 1px solid #888;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin: 0 1%;
+}
+
+.inner
+{
+    display:table-cell;
+    height: 100px;
+    width: 100px;
+    vertical-align: middle;
+}
+.outer:hover button.ajax_image_delete{
+    display: block;
+}
+.exibition_del_button{
+    right: -34px;
+    width: 64px;
+    height: 35px;
+    position: relative;
+    top: -100px;
+}
+.exibition_del_button button.ajax_image_delete{
+    display: none;
+    position: absolute;
+    z-index: 999999;
+    right: 0;
+}
+.cke_button__easyimageupload{
+    display: none !important;
+}
