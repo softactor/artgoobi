@@ -1,6 +1,11 @@
 <div class="front_art_work_wrapper">
     <?php
     if (isset($artwork_info) && !empty($artwork_info)) {
+        print '<pre>';
+        print_r($artwork_info);
+        print '</pre>';
+        exit;
+        
         ?>
         <ul class="caption-style-4">
             <?php
