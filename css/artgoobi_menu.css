@@ -27,6 +27,13 @@ nav{position:relative;width:100%;margin:0 auto;}
 #cssmenu ul ul li.has-sub:hover,#cssmenu ul li.has-sub ul li.has-sub ul li:hover{background:#363636;}
 #cssmenu ul ul ul li.active a{border-left:1px solid #333}
 #cssmenu > ul > li.has-sub > ul > li.active > a,#cssmenu > ul ul > li.has-sub > ul > li.active> a{border-top:1px solid #333}
+.navbar_brand_custom{
+    padding: 0px 5px 2px 3px;
+}
+.navbar-default {
+    background-color: transparent !important;
+    border: none !important;
+}
 
 @media screen and (max-width:1000px){
 .logo{position:absolute;top:0;left: 0;width:100%;height:46px;text-align:center;padding:10px 0 0 0 ;float:none}

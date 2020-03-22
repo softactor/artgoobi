@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <nav class="navbar navbar-default">
 
                 <!-- Brand and toggle get grouped for better mobile display -->
@@ -12,7 +12,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <!--<a class="navbar-brand" href="#">Brand</a>-->
-                    <a class="navbar-brand" href="<?php echo base_url() ?>">
+                    <a class="navbar-brand navbar_brand_custom" href="<?php echo base_url() ?>">
                         <img alt="Brand" src="<?php echo base_url() ?>logo.png">
                     </a>
                 </div>
@@ -35,48 +35,6 @@
                 </div><!-- /.navbar-collapse -->        
 
             </nav>
-        </div>
-        <div class="col-md-4">
-            <div class="artgoobi_search_box_container">
-                <div class="form-group">
-                    <input type="text" class="form-control search_input_style" placeholder="Search" id="artworksearching">
-                    <button type="button" class="search_button" onclick="searchArtistArtworks();"><i class="glyphicon glyphicon-search"></i></button> 
-                </div>
-                <?php
-                $user_logged_in = $this->session->userdata('user_logged_in_status');
-                if (isset($user_logged_in) && !empty($user_logged_in)) {
-                    ?>
-                    <a href="<?php echo base_url() ?>welcome/user_profile">
-                        <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
-                        <?php echo $this->session->userdata('user_logged_name'); ?>
-                    </a>
-                <?php } ?>
-                <div class="custom_search" onclick="openAdvanceCustomSearch();" title="advance search">Custom search</div>
-            </div>             
-            <ul class="nav navbar-nav navbar-right">                    
-                <li>                        
-                    <?php
-                    if (isset($user_logged_in) && !empty($user_logged_in)) {
-                        ?>
-                    <a href="#" data-toggle="modal" data-target="#modal_user_logout">
-                        <img src="<?php echo base_url() ?>images/icons/logout_ico.png" />
-                    </a>
-                        <?php
-                    }
-                    if (!isset($user_logged_in) && empty($user_logged_in)) {
-                        ?>
-                        <a href="#" data-toggle="modal" data-target="#modal_userloggin"><img src="<?php echo base_url() ?>images/icons/login_ico.png" /></a>
-                        <!--<a id="signup_link" class="btn btn-default btn-flat btn-xs profile_link_style" data-toggle="modal" data-target="#modal_signup">SIGN UP</a>-->
-                    <?php } ?>
-                </li>
-                <?php
-                //if (!isset($user_logged_in) && empty($user_logged_in)) {
-                    ?>
-<!--                    <li>
-                        <a id="signup_link" href="#" data-toggle="modal" data-target="#modal_signup"><span class="glyphicon glyphicon-user"></span></a>
-                    </li>-->
-                <?php //} ?>
-            </ul>
-        </div>
+        </div>        
     </div>
 </div>

@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
         $data['galleries']              = $artwork_info['data'];
         $data['top_menu']               = $this->load->view('layouts/top_menu', $data, true);
         $data['header']                 = $this->load->view('layouts/header', $data, true);
-        $data['footer']                 = $this->load->view('layouts/footer_frontpage', '', true);
+        $data['footer']                 = $this->load->view('layouts/footer', '', true);
         $this->load->view('layouts/single', $data);
     }
     
