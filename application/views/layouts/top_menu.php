@@ -10,30 +10,55 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">Project name</a>
+                        <a class="navbar-brand" href="#">
+                            <img id="artgoobi_header_image_logo" class="header_logo_image_text" src="<?php echo base_url() ?>logo.png" height="105"/>
+                            <span id="artgoobi_header_image_text" class="header_logo_image_text">Artgoobi</span>
+                        </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home</a></li>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li class="dropdown-header">Nav header</li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="<?php echo base_url() ?>">Home</a></li>
+                            <li><a href="<?php echo base_url('welcome/about_us'); ?>">About</a></li>
+                            <li><a href="<?php echo base_url('welcome/exhibition_list'); ?>">Exhibition</a></li>
+                            <li><a href="<?php echo base_url('welcome/event_list'); ?>">Event</a></li>
+                            <li><a href="<?php echo base_url('welcome/gallery_list'); ?>">Artgoobi Gallery</a></li>
+                            <li><a href="<?php echo base_url('welcome/terms_and_conditions'); ?>">Terms & Conditions</a></li>
+                            <li><a href="<?php echo base_url('welcome/contact_us'); ?>">Contact Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="../navbar/">Default</a></li>
-                            <li><a href="../navbar-static-top/">Static top</a></li>
-                            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
+                            <?php
+                                $user_logged_in = $this->session->userdata('user_logged_in_status');
+                                if(isset($user_logged_in) && !empty($user_logged_in)){
+                            ?>
+                            <li>
+                                <a href="<?php echo base_url() ?>welcome/user_profile">
+                                    <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25">
+                                    <span class="hidden-xs">
+                                        <?php echo $this->session->userdata('user_logged_name'); ?>
+                                    </span>
+                                </a>
+                            </li>
+                            <?php } ?>
+                            <li>                        
+                                <?php
+                                    if (isset($user_logged_in) && !empty($user_logged_in)) {
+                                ?>
+                                <a href="#" data-toggle="modal" data-target="#modal_user_logout"><span class="glyphicon glyphicon-log-out"></span></a>
+                                <?php
+                                }
+                                    if (!isset($user_logged_in) && empty($user_logged_in)) {
+                                ?>
+                                    <a href="#" data-toggle="modal" data-target="#modal_userloggin"><span class="glyphicon glyphicon-log-in"></span></a>
+                                    <!--<a id="signup_link" class="btn btn-default btn-flat btn-xs profile_link_style" data-toggle="modal" data-target="#modal_signup">SIGN UP</a>-->
+                                <?php } ?>
+                            </li>
+                            <?php
+                            if (!isset($user_logged_in) && empty($user_logged_in)) {
+                                ?>
+                                <li>
+                                    <a id="signup_link" href="#" data-toggle="modal" data-target="#modal_signup"><span class="glyphicon glyphicon-user"></span></a>
+                                </li>
+                        <?php } ?>
                         </ul>
                     </div><!--/.nav-collapse -->
                 </div>

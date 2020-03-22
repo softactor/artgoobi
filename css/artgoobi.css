@@ -29,6 +29,9 @@ body{
 }*/
 
 /* header Search Input style */
+.header_logo_image_text{
+    display: none !important;
+}
 
 .stylish-input-group .input-group-addon{
     background: white !important; 
