@@ -65,4 +65,8 @@
     .front_art_work_wrapper_small_device img{
         margin: 1% 0;
     }
+    .front_art_work_wrapper_small_device a{
+        position: relative;
+        z-index: 9999;
+    }
 }
