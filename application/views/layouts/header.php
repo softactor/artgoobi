@@ -18,7 +18,6 @@
     <link href="<?php echo base_url(); ?>css/jquery-ui.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/artgoobi.css" rel="stylesheet">
-    <link href="<?php echo base_url(); ?>css/artgoobi_menu.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/artgoobi_responsive.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->

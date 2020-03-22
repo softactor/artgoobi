@@ -18,19 +18,18 @@ body{
 .copyright-container{
     width: 100%;
 }
-/*.container-full {
-  margin: 0 auto;
-  width: 100%;
-}*/
-
-/* header logo style */
-/*.header_logo{
-    margin: 0% 4% 2% 5%; 
-}*/
+*{margin:0;padding:0;text-decoration:none}
+.navbar_brand_custom{
+    padding: 0px 5px 2px 3px;
+}
+.navbar-default {
+    background-color: transparent !important;
+    border: none !important;
+}
 
 /* header Search Input style */
 .header_logo_image_text{
-    display: none !important;
+    display: none;
 }
 
 .stylish-input-group .input-group-addon{
