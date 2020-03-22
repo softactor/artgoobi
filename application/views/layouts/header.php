@@ -8,7 +8,17 @@
     <meta name="description" content="Bangladesh Artist Associasion">
     <meta name="author" content="artgoobi">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>images/favicon_16X16.png" />
-
+    <!--for facebook share-->
+    <?php
+            if(isset($isShared) && !empty($isShared)){ ?>
+                <meta property="og:url"                content="<?php echo base_url('welcome/artwork_details/' . $artist_id . '/' . $artwork_id); ?>" />
+                <meta property="og:type"               content="article" />
+                <meta property="og:title"              content="<?php echo $artwork_data->title; ?>" />
+                <meta property="og:image"              content="<?php echo base_url(); ?>uploads/artwork/<?php echo $artwork_data->image_original; ?>" />
+        <?php   
+        
+            }
+        ?>
     <title>Artgoobi</title>
 
     <!-- Bootstrap core CSS -->
@@ -16,6 +26,7 @@
     <link href="<?php echo base_url(); ?>css/ihover.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/jquery-ui.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>lightbox/css/lightbox.min.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/artgoobi.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>css/artgoobi_responsive.css" rel="stylesheet">
