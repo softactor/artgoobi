@@ -14,6 +14,19 @@ if (isset($galleries) && !empty($galleries)) {
             </div>
         <?php } ?>
     </div>
+    <div class="front_art_work_wrapper_small_device">
+        <div class="row">
+            <?php
+                foreach ($galleries as $artwork) {
+            ?>
+            <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12">
+                <a class="example-image-link" href="<?php echo base_url(); ?>uploads/artwork/<?php echo $artwork->image_original; ?>" data-lightbox="example-set" data-title="<a href='<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>'><?php echo $artwork->title; ?></a>">
+                    <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>" alt="img">
+                </a>
+            </div>
+            <?php } ?>
+        </div>
+    </div>
     <div class="clearfix"></div>
     <div class="page-header view-more-style">
         <div class="heading_featured">

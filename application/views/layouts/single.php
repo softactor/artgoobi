@@ -1,5 +1,4 @@
 <?php echo $header; ?>
-<div class="container">
     <div class="row">
         <div class="col-md-10 col-sm-12 col-lg-10 col-xs-12">
             <div class="row">
@@ -11,7 +10,6 @@
         <div class="col-md-2">
             <?php $this->view('layouts/advertisement'); ?>
         </div>
-    </div>    
-</div>
+    </div>
 <?php echo $footer; ?>
                 

@@ -41,3 +41,4 @@
         </script>
             <!-- Top Menu Area Start -->
             <?php echo $top_menu;?>
+<div class="container common_margin_top">

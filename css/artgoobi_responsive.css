@@ -55,4 +55,14 @@
     #artgoobi_header_image_logo{
         display: none !important;
     }
+    .front_art_work_wrapper{
+        display: none;
+    }
+    .front_art_work_wrapper_small_device{
+        display: inline-block;
+        margin-top: 15%;
+    }
+    .front_art_work_wrapper_small_device img{
+        margin: 1% 0;
+    }
 }

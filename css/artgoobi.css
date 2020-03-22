@@ -12,6 +12,9 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+.common_margin_top{
+    margin-top:8%;
+}
 .footer-container{
     width: 100%;
 }
@@ -25,6 +28,9 @@ body{
 .navbar-default {
     background-color: transparent !important;
     border: none !important;
+}
+#navbar ul{
+    margin-top: 3%;
 }
 
 /* header Search Input style */
@@ -106,6 +112,9 @@ ul.inside_arits_profile{
 .check-col{
     margin: 2px;
     padding: 0;
+}
+.front_art_work_wrapper_small_device{
+    display: none;
 }
 
 /*div.artwork_image_holder{
