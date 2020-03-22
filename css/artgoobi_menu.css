@@ -40,7 +40,7 @@ nav{position:relative;width:100%;margin:0 auto;}
 .logo2{display:none}
 nav{width:100%;}
 #cssmenu{width:100%}
-#cssmenu ul{width:100%;display:none}
+#cssmenu ul{width:100%;}
 #cssmenu ul li{width:100%;border-top:1px solid #444}
 #cssmenu ul li:hover{background:#363636;}
 #cssmenu ul ul li,#cssmenu li:hover > ul > li{height:auto}
