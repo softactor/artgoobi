@@ -35,3 +35,26 @@
     <script src="<?php echo base_url(); ?>js/frontside.js"></script>
   </body>
 </html>
+<?php
+$data = [];
+$profiler = false;
+$user_logged_in = $this->session->userdata('user_logged_id');
+if (isset($user_logged_in) && !empty($user_logged_in)) {
+    if (isset($artwork_data->artist_id) && $user_logged_in == $artwork_data->artist_id) {
+        $profiler = true;
+    }
+}
+$data['profiler'] = $profiler;
+if (isset($artwork_data) && !empty($artwork_data)) {
+    $data['artwork_data'] = $artwork_data;
+}
+$this->view('modal/user_login');
+$this->view('modal/user_logout');
+$this->view('modal/user_signin');
+$this->load->view('modal/user_forget_password');
+$this->view('modal/profile_occupation', $data);
+$this->view('modal/profile_education', $data);
+$this->view('modal/profile_experience', $data);
+$this->load->view('modal/user_signup_update');
+$this->view('modal/advance_search');
+?>
