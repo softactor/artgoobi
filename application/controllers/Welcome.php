@@ -19,7 +19,7 @@ class Welcome extends CI_Controller {
         $data['top_menu']               = $this->load->view('layouts/top_menu', $data, true);
         $data['header']                 = $this->load->view('layouts/header', $data, true);
         $data['footer']                 = $this->load->view('layouts/footer', '', true);
-        $this->load->view('layouts/single', $data);
+        $this->load->view('single', $data);
     }
     
     public function contact_us() {
