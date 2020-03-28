@@ -49,6 +49,7 @@
                 <div id="works_details">
                     <!-- Get All user work history -->                
                     <?php
+                    if(isset($artwork_data->artist_id) && !empty($artwork_data->artist_id)){
                     // We need the following param:
                     $param['where'] = [
                         'type_id' => 1,
@@ -87,6 +88,7 @@
                                 </div>
                             </div>
                     <?php }
+                    }
                     ?>               
                 </div>
             </div>

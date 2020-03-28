@@ -29,8 +29,6 @@
         <link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/exhibition_details.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/gallery_details.css" rel="stylesheet">
-        <!-- artgoobi nav custom-css -->
-        <link href="<?php echo base_url(); ?>css/navbar_artgoobi.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi_responsive.css" rel="stylesheet">
 
@@ -55,6 +53,6 @@
         </script>
             <!-- Top Menu Area Start -->
             <?php echo $top_menu;?>
-        <div class="container common_margin_top">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-12 col-md-10 col-sm-12">

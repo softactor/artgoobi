@@ -128,15 +128,3 @@
     </div>
     <!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/css/datepicker.css" rel="stylesheet" type="text/css" />
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.js"></script>
-<script>
-    $("#date_of_birth").datepicker({
-        autoclose: true,
-        todayHighlight: true,
-        format:'yyyy-mm-dd',
-    });
-</script>
