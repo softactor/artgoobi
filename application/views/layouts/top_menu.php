@@ -10,7 +10,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="<?php echo base_url() ?>">
                             <img id="artgoobi_header_image_logo" class="header_logo_image_text" src="<?php echo base_url() ?>logo.png" height="105"/>
                             <span id="artgoobi_header_image_text" class="header_logo_image_text">Artgoobi</span>
                         </a>
