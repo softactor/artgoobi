@@ -60,13 +60,17 @@
     }
     .front_art_work_wrapper_small_device{
         display: inline-block;
-        margin-top: 15%;
+        margin-top: 5%;
     }
     .front_art_work_wrapper_small_device img{
         margin: 1% 0;
     }
     .front_art_work_wrapper_small_device a{
         position: relative;
-        z-index: 9999;
+        z-index: 99;
+    }
+    #navbar{
+        z-index: 199;
+        background-color: #e5e5e5 !important;
     }
 }
