@@ -5,3 +5,5 @@
 /uploads
 /application/config
 /js/global_url.js
+.htaccess
+/.htaccess
