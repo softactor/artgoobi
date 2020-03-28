@@ -6,7 +6,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
         $profiler = true;
     }
     ?>
-    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 col-xl-3 left_panel_user_profile_details">
+    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 col-xl-3">
         <div class="row">
             <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
                 
@@ -135,7 +135,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
         $info .= "Your profile is now In-active state.";
     }
     ?>
-    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 col-xl-3 left_panel_user_profile_details">
+    <div class="col-md-3 col-sm-12 col-xs-12 col-lg-3 col-xl-3">
             <div class="row">
                 <div class="col-sm-12 col-xs-12 col-md-12 col-lg-12 col-xl-12">
                     <img src="<?php echo base_url(); ?>images/default_avater.png" class="img-responsive img-thumbnail" alt="User Image">

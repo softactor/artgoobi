@@ -557,7 +557,7 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_profile', $data);
     }
     public function get_profile_info_by_id(){
