@@ -23,9 +23,14 @@
         <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/ihover.min.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/font-awesome.min.css" rel="stylesheet">
-        <link href="<?php echo base_url(); ?>css/jquery-ui.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/perfect-scrollbar.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/jquery-ui.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/exhibition_details.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/gallery_details.css" rel="stylesheet">
+        <!-- artgoobi nav custom-css -->
+        <link href="<?php echo base_url(); ?>css/navbar_artgoobi.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi_responsive.css" rel="stylesheet">
 
