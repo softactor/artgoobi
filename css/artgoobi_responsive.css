@@ -73,4 +73,11 @@
         z-index: 399;
         background-color: #e5e5e5 !important;
     }
+    .nav li{
+        background-color: white !important;
+        border-top: .5px solid lightgray !important;        
+    }
+    #navbar ul{
+        margin-top: 0 !important;
+    }
 }
