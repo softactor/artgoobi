@@ -55,6 +55,6 @@
         </script>
             <!-- Top Menu Area Start -->
             <?php echo $top_menu;?>
-        <div class="container">
+        <div class="container common_margin_top">
             <div class="row">
                 <div class="col-lg-10 col-xl-12 col-md-10 col-sm-12">
