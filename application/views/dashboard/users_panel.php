@@ -117,7 +117,7 @@
                         <!-- *********** End User Create Form Modal *********** -->
                         <!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                                <table id="admin_all_users_list" class="table table-bordered table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th>SL No.</th>
@@ -172,13 +172,14 @@
                                                 $check_param['sub_menu'] = 'edit';
                                                 if(has_main_menu_access($check_param)){
                                             ?>
-                                                <a href="<?php echo base_url() ?>admin/dashboard/users_panel_edit/<?php echo $data->id; ?>">Edit</a>
+                                            <a title="Edit" class="btn btn-sm btn-default" href="<?php echo base_url() ?>admin/dashboard/users_panel_edit/<?php echo $data->id; ?>"><i class="fa fa-pencil-square"></i></a>
                                             <?php } ?>
                                             <?php                                                
                                                 $check_param['sub_menu'] = 'delete';
                                                 if(has_main_menu_access($check_param)){
                                             ?>
-                                             | <a href="#" onclick="confirm_user_delete_process(<?php echo $data->id; ?>);">Delete</a>
+                                            <a title="Delete" class="btn btn-sm btn-default" href="#" onclick="confirm_user_delete_process(<?php echo $data->id; ?>);"><i class="fa fa-close"></i></a>
+                                            <a title="Login as" class="btn btn-sm btn-default" href="#" onclick="login_as_artist_process(<?php echo $data->id; ?>);"><i class="fa fa-user-circle"></i></a>
                                              <?php } ?>
                                         </td>
                                     </tr>

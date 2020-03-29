@@ -803,4 +803,43 @@ class Dashboard extends CI_Controller {
         }
         echo json_encode($feedback_data);
     }
+    
+    // login as process:
+    public function login_as_artist_process() {
+        // Read All User Data
+        $get_data ['table'] = "users";
+        $get_data ['where']['id'] = htmlentities($this->input->post('artist_id'));
+        $user_info = $this->common_model->common_table_data_read($get_data);
+        if (isset($user_info['status']) && $user_info['status'] == 'success') {
+            $logged['id'] = $user_info['data'][0]->id;
+            $logged['user_email'] = $user_info['data'][0]->user_email;
+            $logged['user_type'] = $user_info['data'][0]->user_type;
+
+            $logged_data = array(
+                'user_logged_id' => $user_info['data'][0]->id,
+                'user_logged_name' => $user_info['data'][0]->name,
+                'user_logged_type' => $user_info['data'][0]->user_type,
+                'user_logged_type_name' => get_user_type_name($this->input->post('user_type')),
+                'user_logged_email' => $user_info['data'][0]->user_email,
+                'user_logged_in_status' => TRUE
+            );
+
+            $this->session->set_userdata($logged_data);
+            $feedback_data = [
+                'status'    => "success",
+                'message'   => 'You Have Successfully Loggedin.',
+                'login_as'  => "You have been successfully logging as ".$user_info['data'][0]->name,
+                'data'      => ''
+            ];
+            $this->session->set_flashdata('op_message', $feedback_data);
+        } else {
+            $feedback_data = [
+                'status' => 'error',
+                'message' => 'Login credential was not correct.',
+                'data' => ''
+            ];
+            $this->session->set_flashdata('op_message', $feedback_data);
+        }
+        echo json_encode($feedback_data);
+    }
 }

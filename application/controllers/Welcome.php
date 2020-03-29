@@ -752,7 +752,7 @@ class Welcome extends CI_Controller {
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', $data, true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', '', true);
         $data['art_form'] = $this->load->view('partial/forms/painting_form', $data, true);
         $data['art_form_id'] = 1;
@@ -791,7 +791,7 @@ class Welcome extends CI_Controller {
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
-            $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', $data, true);
+            $data['profile_left_panel'] = $this->load->view('profile_left_panel', $data, true);
             $data['footer'] = $this->load->view('layouts/footer', '', true);
             if($type_name == 'Painting'){
                 $data['art_form']      = $this->load->view('partial/forms/painting_form', $data, true);
@@ -863,7 +863,7 @@ class Welcome extends CI_Controller {
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
-            $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', $data, true);
+            $data['profile_left_panel'] = $this->load->view('profile_left_panel', $data, true);
             $data['footer'] = $this->load->view('layouts/footer', '', true);
             if($type_name == 'Painting'){
                 $data['art_form']      = $this->load->view('partial/forms/painting_form', $data, true);
@@ -1694,7 +1694,7 @@ class Welcome extends CI_Controller {
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $data['footer'] = $this->load->view('layouts/footer', '', true);
         $this->load->view('profile_image_upload_edit', $data);
     }
@@ -1789,7 +1789,7 @@ class Welcome extends CI_Controller {
         $data['title'] = "Artgoobi || Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         $this->load->view('artwork_details', $data);
 
@@ -1827,7 +1827,7 @@ class Welcome extends CI_Controller {
         $data['title'] = "Artgoobi || Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         $this->load->view('artwork_details_modify', $data);
 
@@ -1915,7 +1915,7 @@ class Welcome extends CI_Controller {
             $data['active_menu']                = "gallery";
             $data['top_menu']                   = $this->load->view('layouts/top_menu', $data, true);
             $data['header']                     = $this->load->view('layouts/header', $data, true);
-            $data['profile_left_panel']         = $this->load->view('layouts/profile_left_panel', $data, true);
+            $data['profile_left_panel']         = $this->load->view('profile_left_panel', $data, true);
             $data['footer'] = $this->load->view('layouts/footer', '', true);
             if($type_name == 'Painting'){
                 $data['art_form']      = $this->load->view('partial/forms/painting_form_edit', $data, true);
@@ -2207,7 +2207,7 @@ class Welcome extends CI_Controller {
         $data['title'] = "Artgoobi || User Profile";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         
         // Read Last inserted Data
@@ -2392,7 +2392,7 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_event_list', $data);
     }    
     public function edit_user_event_data($event_id){
@@ -2427,7 +2427,7 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_event_edit_view', $data);
     }    
     public function user_event_create($artist_id = null){
@@ -2453,7 +2453,7 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_event_create', $data);
     }
     public function process_event() {
@@ -2494,7 +2494,7 @@ class Welcome extends CI_Controller {
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
             $data['footer'] = $this->load->view('layouts/footer', $data, true);
-            $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+            $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
             $this->load->view('user_event_create', $data);
         } else {
             // try to make data for insert into post data table
@@ -2582,7 +2582,7 @@ class Welcome extends CI_Controller {
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
             $data['footer'] = $this->load->view('layouts/footer', $data, true);
-            $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+            $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
             $this->load->view('user_event_edit_view', $data);
         } else {
             $start_date_string     = explode('/', $this->input->post("start_date"));
@@ -2746,7 +2746,7 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $data['profile_left_panel'] = $this->load->view('layouts/profile_left_panel', '', true);
+        $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_profile_image_upload', $data);
     }
     public function user_profile_image_upload_process() {

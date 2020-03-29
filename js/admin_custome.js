@@ -5,6 +5,7 @@
  */
 
 $(function () {
+    $('#admin_all_users_list').DataTable();
     $("#start_date").datepicker({
         dateFormat: "yy-mm-dd"
     });
@@ -16,6 +17,36 @@ $(function () {
     }
 });
 
+function login_as_artist_process(login_as_user_id){
+    swal({
+        title: 'Are you sure?',
+        text: "You want to login as this artist",
+        type: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes'
+      }).then((result) => {
+        if (result.value) {
+          var url       =   base_url_addr+"admin/dashboard/login_as_artist_process";
+          $.ajax({
+                url         :url,
+                type        :"POST",
+                dataType    :"json",
+                data        :"artist_id="+login_as_user_id,
+                success:function(response){
+                    if(response.status   ==  'success'){
+                        swal("Logged in", response.message, "success");
+                        setTimeout(function () {
+                            var lggin_as_location = base_url_addr+"welcome/user_profile";
+                            window.open(lggin_as_location, '_blank');
+                        }, 3000);
+                    }
+                }
+            });
+        }
+      })
+}
 
 function loadConfirmDeleteAlert(deleteId, tableName,){
     swal({
