@@ -80,4 +80,8 @@
     #navbar ul{
         margin-top: 0 !important;
     }
+    ul.profile_menu_style{
+        position: relative !important;
+        z-index: 299 !important;
+    }
 }
