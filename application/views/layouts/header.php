@@ -27,8 +27,8 @@
         <link href="<?php echo base_url(); ?>css/perfect-scrollbar.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/jquery-ui.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/sweetalert.css" rel="stylesheet">
+        <link href="<?php echo base_url(); ?>css/select2.min.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/exhibition_details.css" rel="stylesheet">
-        <!--<link href="<?php echo base_url(); ?>css/gallery_details.css" rel="stylesheet">-->
         <link href="<?php echo base_url(); ?>css/artgoobi.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi_menu.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>css/artgoobi_responsive.css" rel="stylesheet">
@@ -54,6 +54,21 @@
         </script>
             <!-- Top Menu Area Start -->
             <?php echo $top_menu;?>
-        <div class="container">
+            <!--Advance search option showing area-->
+            <div class="container" class="search_section">
+                <div class="row">
+                    <div class="col-md-10 col-sm-12 col-lg-10 col-xs-12">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
+                                <div id="dynamic_search_impose"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="dynamic_search_filter_impose"></div>
+                    </div>
+                </div>
+            </div>
+        <div id="page_artgoobi_content_area" class="container">
             <div class="row">
                 <div class="col-lg-10 col-xl-12 col-md-10 col-sm-12">

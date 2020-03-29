@@ -1,4 +1,7 @@
 jQuery(document).ready(function ($) {
+    $("#artist_id").select2({
+        width: '100%'
+    });
     $('#myCarousel').carousel({
         interval: 5000
     });

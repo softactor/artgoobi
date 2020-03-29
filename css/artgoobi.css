@@ -12,6 +12,10 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+ul#left_navbar_cusom_width{
+    /*border: 1px solid !important;*/ 
+    width: 85% !important; 
+}
 .common_margin_top{
     margin-top:8%;
 }
@@ -882,7 +886,7 @@ span#profile_edit_image{
 }
 .artgoobi_search_box_container{
     /*border: 1px solid black;*/
-    width: 84%;
+    width: 355px;
     height: auto;
     float: left;
     margin: 5px 0 0 0;
