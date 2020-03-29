@@ -151,3 +151,11 @@ img.exi_central_img
 .cke_button__easyimageupload{
     display: none !important;
 }
+.exhibitor_inactive{
+    color: #a94442;    
+    background-color: #f2dede;
+}
+.exhibitor_active{
+    color: #3c763d;
+    background-color: #dff0d8;
+}

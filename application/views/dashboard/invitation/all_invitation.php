@@ -151,11 +151,11 @@ $check_param['meny_type'] = 2;
                                         foreach ($invitedEmailData as $exhibitor) {
                                             $tdClass = (($exhibitor->is_active) ? "exhibitor_active" : "exhibitor_inactive");
                                             ?>
-                                            <tr>
+                                            <tr class="<?php echo $tdClass; ?>">
                                                 <td><?php echo $count++; ?></td>
                                                 <td><?php echo $exhibitor->invited_email; ?></td>
                                                 <td><?php echo (isset($exhibitor->invited_time) ? human_format_date($exhibitor->invited_time) : ""); ?></td>
-                                                <td class="<?php echo $tdClass; ?>"><?php echo (($exhibitor->is_active) ? "Activated" : "Pending"); ?></td>
+                                                <td><?php echo (($exhibitor->is_active) ? "Activated" : "Pending"); ?></td>
                                                 <td><?php echo (isset($exhibitor->activated_time) ? human_format_date($exhibitor->activated_time) : ""); ?></td>
                                                 <td>
                                                     <button type="button" class="btn btn-small" onclick="confirm_delete_operation('<?php echo $exhibitor->id; ?>', 'artist_invitation_details');"><i class="fa fa-close"></i></button>
