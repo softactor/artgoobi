@@ -915,7 +915,7 @@ class Welcome extends CI_Controller {
                 'artist_name'       => $this->input->post('arits_name'),
                 'type_of_art_id'    => $this->input->post('type_of_art_id'),
                 'type_of_child_id'  => $this->input->post('type_of_child_id'),
-                'title'             => $this->input->post('title'),
+                'title'             => htmlentities($this->input->post('title')),
                 'formate'           => $this->input->post('formate'),
                 'video_format'      => $this->input->post('video_format'),
                 'height'            => $this->input->post('height'),
