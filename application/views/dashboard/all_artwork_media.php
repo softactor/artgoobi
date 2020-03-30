@@ -46,7 +46,7 @@ $check_param['meny_type'] = 2;
 <?php } ?>
                         <!-- /.box-header -->
                         <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                            <table id="all_artwork_media_table" class="table table-hover">
                                 <thead>
                                     <tr>
                                         <th>SL No.</th>
