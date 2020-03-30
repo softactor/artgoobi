@@ -35,19 +35,16 @@ $check_param['meny_type'] = 2;
                         $check_param['sub_menu'] = 'add';
                         if (has_main_menu_access($check_param)) {
                             ?>
-        <!--                        <a class="btn btn-app" href="<?php echo base_url() ?>admin/exhibition/create_exhibition">
-            <i class="fa fa-plus"></i>
-        </a>-->
-                            <div class="box-tools pull-right">
+                            <div class="pull-right">
                                 <a href="<?php echo base_url() ?>admin/ArtgoobiSetup/create_artwork_media" class="btn btn-flat btn-success small" title="Create Exhibition">
                                     <i class="fa fa-plus"></i>
                                 </a>
                             </div>
-                        </div>
-                    <?php } ?>
+                        <?php } ?>
+                    </div>
                     <!-- /.box-header -->
-                    <div class="box-body table-responsive no-padding">
-                        <table id="all_artwork_media_table" class="table table-hover">
+                    <div class="box-body table-responsive">
+                        <table id="all_artwork_media_table" class="table table-hover table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>SL No.</th>
@@ -88,9 +85,10 @@ $check_param['meny_type'] = 2;
                         </table>
                     </div>
                     <!-- /.box-body -->
+                    <!-- /.box -->
                 </div>
-                <!-- /.box -->                
             </div>
+        </div>
     </section>
     <!-- /.content -->
 </div>

@@ -5,6 +5,8 @@
  */
 
 $(function () {
+    $('#all_event_list_admin').DataTable();
+    $('#faq_list_admin_table').DataTable();
     $('#all_artwork_media_table').DataTable();
     $('#e_invitation_data_table_id').DataTable();
     $('#admin_all_users_list').DataTable();

@@ -37,63 +37,64 @@
 <!--                        <a class="btn btn-app" href="<?php echo base_url() ?>admin/exhibition/create_exhibition">
                             <i class="fa fa-plus"></i>
                         </a>-->
-                        <div class="box-tools pull-right">
+                        <div class="pull-right">
                             <a href="<?php echo base_url() ?>admin/events/create_event" class="btn btn-flat btn-success small" title="Create gallery">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <?php } ?>
-                        <!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th>SL No.</th>
-                                        <th>Title</th>
-                                        <th>Start Date</th>
-                                        <th>End Date</th>
-                                        <th>Venue Address</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="users_list">
-                                    <?php 
-                                        if(isset($all_data['data']) && !empty($all_data['data'])){
-                                        $sl = 1;
-                                        foreach($all_data['data'] as $data){                                            
-                                    ?>
-                                    <tr id="user_row_<?php echo $data->id; ?>">
-                                        <td><?php echo $sl; ?></td>
-                                        <td><?php echo $data->title; ?></td>
-                                        <td><?php echo human_format_date($data->start_date); ?></td>
-                                        <td><?php echo human_format_date($data->end_date); ?></td>
-                                        <td><?php echo $data->venue_address; ?></td>
-                                        <td>
-                                            <?php if($data->status=='1'){ ?>
-                                                <span class="label label-success">Active</span>
-                                            <?php } ?>
-                                            <?php if($data->status=='0'){ ?>
-                                                <span class="label label-warning">Inactive</span>
-                                            <?php } ?>
-                                        </td>
-                                        <td>
-                                            <a href="<?php echo base_url('admin/events/edit_event/'.$data->id) ?>"><button type="button" class="btn btn-flat btn-success small">Edit</button></a>
-                                            <a href="#" onclick="confirm_events_delete_process(<?php echo $data->id; ?>);"><button type="button" class="btn btn-flat btn-danger small">Delete</button></a>
-                                        </td>
-                                    <?php $sl++;}}else{ ?>
-                                    <tr>
-                                        <td colspan="7"><div class="col-md-12 label-warning">There is no Data</div></td>
-                                    </tr>
-                                        <?php } ?>
-                                </tbody>                                
-                            </table>
-                        </div>
-                        <!-- /.box-body -->
                     </div>
-                    <!-- /.box -->
+                    <!-- /.box-header -->
+                    <div class="box-body table-responsive">
+                        <table id="all_event_list_admin" class="table table-hover table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th>SL No.</th>
+                                    <th>Title</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                    <th>Venue Address</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users_list">
+                                <?php 
+                                    if(isset($all_data['data']) && !empty($all_data['data'])){
+                                    $sl = 1;
+                                    foreach($all_data['data'] as $data){                                            
+                                ?>
+                                <tr id="user_row_<?php echo $data->id; ?>">
+                                    <td><?php echo $sl; ?></td>
+                                    <td><?php echo $data->title; ?></td>
+                                    <td><?php echo human_format_date($data->start_date); ?></td>
+                                    <td><?php echo human_format_date($data->end_date); ?></td>
+                                    <td><?php echo $data->venue_address; ?></td>
+                                    <td>
+                                        <?php if($data->status=='1'){ ?>
+                                            <span class="label label-success">Active</span>
+                                        <?php } ?>
+                                        <?php if($data->status=='0'){ ?>
+                                            <span class="label label-warning">Inactive</span>
+                                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        <a href="<?php echo base_url('admin/events/edit_event/'.$data->id) ?>"><button type="button" class="btn btn-flat btn-success small">Edit</button></a>
+                                        <a href="#" onclick="confirm_events_delete_process(<?php echo $data->id; ?>);"><button type="button" class="btn btn-flat btn-danger small">Delete</button></a>
+                                    </td>
+                                <?php $sl++;}}else{ ?>
+                                <tr>
+                                    <td colspan="7"><div class="col-md-12 label-warning">There is no Data</div></td>
+                                </tr>
+                                    <?php } ?>
+                            </tbody>                                
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
                 </div>
+                    <!-- /.box -->
             </div>
+        </div>
     </section>
     <!-- /.content -->
 </div>

@@ -37,15 +37,16 @@
 <!--                        <a class="btn btn-app" href="<?php echo base_url() ?>admin/exhibition/create_exhibition">
                             <i class="fa fa-plus"></i>
                         </a>-->
-                        <div class="box-tools pull-right">
+                        <div class="pull-right">
                             <a href="<?php echo base_url() ?>admin/faq/create_faq" class="btn btn-flat btn-success small" title="Create FAQ">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <?php } ?>
+                    </div>
                         <!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                        <div class="box-body table-responsive">
+                            <table id="faq_list_admin_table" class="table table-hover table-bordered table-striped table-hover">
                                 <thead>
                                     <tr>
                                         <th>SL No.</th>

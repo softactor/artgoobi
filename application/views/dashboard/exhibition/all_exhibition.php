@@ -37,15 +37,16 @@
 <!--                        <a class="btn btn-app" href="<?php echo base_url() ?>admin/exhibition/create_exhibition">
                             <i class="fa fa-plus"></i>
                         </a>-->
-                        <div class="box-tools pull-right">
+                        <div class="pull-right">
                             <a href="<?php echo base_url() ?>admin/exhibition/create_exhibition" class="btn btn-flat btn-success small" title="Create Exhibition">
                                 <i class="fa fa-plus"></i>
                             </a>
                         </div>
                         <?php } ?>
+                    </div>
                         <!-- /.box-header -->
-                        <div class="box-body table-responsive no-padding">
-                            <table class="table table-hover">
+                        <div class="box-body table-responsive">
+                            <table class="table table-hover table-bordered table-striped">
                                 <thead>
                                     <tr>
                                         <th>SL No.</th>
@@ -90,10 +91,10 @@
                             </table>
                         </div>
                         <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
                 </div>
+                <!-- /.box -->
             </div>
+        </div>
     </section>
     <!-- /.content -->
 </div>

@@ -32,7 +32,7 @@
                         $check_param['sub_menu'] = 'add';
                         if (has_main_menu_access($check_param)) {
                             ?>
-                            <div class="box-tools pull-right">
+                            <div class="pull-right">
                                 <a href="<?php echo base_url() ?>admin/faq" class="btn btn-flat btn-success small" title="FAQ List">
                                     <i class="fa fa-list"></i>
                                 </a>
