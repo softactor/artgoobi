@@ -1,7 +1,12 @@
 <?php echo $header; ?>    
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
-        <?php $this->load->view('artworks/art_gallery'); ?>                    
+        <?php $this->load->view('artworks/art_gallery'); ?> 
+        <div class="page-header view-more-style">
+        <div class="heading_featured">
+            <h4 class="text-center"><a href="<?php echo base_url(); ?>welcome/gallery_list">Explore Gallery</a></h4>
+        </div>
+    </div>
     </div>
 </div>
 <div class="row">

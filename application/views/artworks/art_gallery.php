@@ -27,10 +27,5 @@ if (isset($galleries) && !empty($galleries)) {
         </div>
     </div>
     <div class="clearfix"></div>
-    <div class="page-header view-more-style">
-        <div class="heading_featured">
-            <h4 class="text-center"><a href="<?php echo base_url(); ?>welcome/gallery_list">view more</a></h4>
-        </div>
-    </div>
 <?php } ?>
 <!-- End of front_art_work_wrapper-->
