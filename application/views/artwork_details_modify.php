@@ -92,7 +92,7 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                                     <div class="form-group">
                                         <label class="control-label col-sm-4" for="title">Title:<span class="required"></span></label>
                                         <div class="col-sm-8">          
-                                            <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="<?php echo set_value('title',$artwork_data->title); ?>">
+                                            <input type="text" class="form-control" id="title" placeholder="Title" name="title" value="<?php echo set_value('title',html_entity_decode($artwork_data->title)); ?>">
                                             <span class='alert-danger'><?php echo form_error('title'); ?></span>
                                         </div>
                                     </div>                                                
