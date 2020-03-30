@@ -2291,10 +2291,11 @@ class Welcome extends CI_Controller {
         $data['title']                  = "Artgoobi || Gallery";
         $data['active_menu'] = "gallery";
         // Read All User Data
-        $get_data['table']              = "artwork_info";
-        $get_data['where']['status']    = 1;
-        $artwork_info                   = $this->common_model->common_table_data_read($get_data);
-        $data['galleries']              = $artwork_info['data'];
+        
+        $gallery_sql                    = "SELECT * FROM `artwork_info` ORDER BY RAND(), create_time DESC";
+        $query                          = $this->db->query($gallery_sql);
+        $data['galleries']              = $query->result();
+        
         $data['title'] = "Artgoobi || Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
