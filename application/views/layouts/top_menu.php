@@ -37,41 +37,41 @@
                         <button type="button" class="search_button" onclick="searchArtistArtworks();"><i class="glyphicon glyphicon-search"></i></button> 
                     </div>
                 </div>
-                <div class="search_box_container_separation">
-                    <?php
-                    $user_logged_in = $this->session->userdata('user_logged_in_status');
-                    if (isset($user_logged_in) && !empty($user_logged_in)) {
-                        ?>
-                        <a href="<?php echo base_url() ?>welcome/user_profile">
-                            <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
-                            <?php echo $this->session->userdata('user_logged_name'); ?>
-                        </a>
-                    <?php } ?>                
+                <div class="search_box_container_separation">                                    
                     <ul id="top_section_profile_access_desktop" class="top_section_profile_access_desktop_style">
                         <li>
-                            <div class="custom_search" onclick="openAdvanceCustomSearch();" title="advance search">Custom search</div>
+                            <div class="custom_search" onclick="openAdvanceCustomSearch();" title="advance search"><i class="fa fa-search-plus" aria-hidden="true"></i> Custom search</div>
                         </li>
-                        <?php
-                            $user_logged_in = $this->session->userdata('user_logged_in_status');
-                        ?>
                         <li>                        
                             <?php
+                                $user_logged_in = $this->session->userdata('user_logged_in_status');
                                 if (isset($user_logged_in) && !empty($user_logged_in)) {
                             ?>
-                            <a href="#" data-toggle="modal" data-target="#modal_user_logout"><span class="glyphicon glyphicon-log-out"></span></a>
+                            <a href="#" data-toggle="modal" data-target="#modal_user_logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
                             <?php
                             }
                                 if (!isset($user_logged_in) && empty($user_logged_in)) {
                             ?>
-                                <a href="#" data-toggle="modal" data-target="#modal_userloggin"><span class="glyphicon glyphicon-log-in"></span></a>
+                                <a href="#" data-toggle="modal" data-target="#modal_userloggin"><i class="fa fa-unlock-alt" aria-hidden="true"></i> Login</a>
                                 <!--<a id="signup_link" class="btn btn-default btn-flat btn-xs profile_link_style" data-toggle="modal" data-target="#modal_signup">SIGN UP</a>-->
                             <?php } ?>
                         </li>
+                            <?php                                
+                                if (isset($user_logged_in) && !empty($user_logged_in)) {
+                            ?>
+                        <li style="margin-top: -2px;">
+                                    <a href="<?php echo base_url() ?>welcome/user_profile">
+                                        <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
+                                        <?php echo $this->session->userdata('user_logged_name'); ?>
+                                    </a>
+                                </li>
+                            <?php } ?>
+                        
                         <?php
                         if (!isset($user_logged_in) && empty($user_logged_in)) {
                             ?>
                             <li>
-                                <a id="signup_link" href="#" data-toggle="modal" data-target="#modal_signup"><span class="glyphicon glyphicon-user"></span></a>
+                                <a id="signup_link" href="#" data-toggle="modal" data-target="#modal_signup"><i class="fa fa-sign-in" aria-hidden="true"></i> Signup</a>
                             </li>
                     <?php } ?>                        
                     </ul>

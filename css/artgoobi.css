@@ -44,6 +44,11 @@ ul#left_navbar_cusom_width{
 ul.top_section_profile_access_desktop_style{
     list-style: none;
 }
+.search_box_container_separation{
+    float: left;
+    width: 100%;
+    margin: 2px 0;
+}
 .top_section_profile_access_desktop_style li{
     float: right;
     display: inline;
