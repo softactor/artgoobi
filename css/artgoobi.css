@@ -28,6 +28,7 @@ ul#left_navbar_cusom_width{
 *{margin:0;padding:0;text-decoration:none}
 .navbar_brand_custom{
     padding: 0px 5px 2px 3px;
+    margin-bottom: 26%;
 }
 .navbar-default {
     background-color: transparent !important;

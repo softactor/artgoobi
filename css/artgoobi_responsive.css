@@ -83,6 +83,10 @@
     #navbar ul{
         margin-top: 0 !important;
     }
+    .navbar_brand_custom {
+        padding: 20px 5px 2px 3px;
+        margin-bottom: 0;
+    }
     ul.profile_menu_style{
         position: relative !important;
         z-index: 299 !important;
