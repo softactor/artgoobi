@@ -904,11 +904,16 @@ span#profile_edit_image{
     float: left;
     margin: 5px 0 0 0;
 }
+.artgoobi_search_box_container a{
+    text-decoration: none;
+    color: #777;
+}
 .custom_search{
     float: right;
     cursor: pointer;
     font-size: 14px;
     line-height: 15px;
+    color: #777; 
 }
 input[type=text].search_input_style{
     width: 90% !important;
