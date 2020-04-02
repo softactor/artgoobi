@@ -7,10 +7,10 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
 }
 ?>
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
+    <div class="col-md-12 col-lg-12 col-xl-12 col-sm-12 col-xs-12">
         <div class="row">
                 <?php echo $profile_left_panel; ?>
-            <div class="col-md-9" style="padding: 0">
+            <div class="col-md-9 col-xl-9 col-lg-9 col-sm-12 col-xs-12" style="padding: 0">
 <?php if ($profiler == true && $users_info->status == 1) { ?>
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix" style="margin-bottom: 2px;">

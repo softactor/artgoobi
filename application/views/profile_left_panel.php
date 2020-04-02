@@ -1,3 +1,4 @@
+<div id="profile_left_panel_id_section" class="profile_left_panel_desktop_view">
 <?php
 if (isset($users_info->status) && $users_info->status == 1) {
     $profiler = false;
@@ -150,3 +151,4 @@ if (isset($users_info->status) && $users_info->status == 1) {
             </div>
         </div>
 <?php } ?>
+</div>

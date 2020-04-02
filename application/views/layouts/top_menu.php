@@ -60,10 +60,18 @@
                                 if (isset($user_logged_in) && !empty($user_logged_in)) {
                             ?>
                         <li style="margin-top: -2px;">
+                                <div class="profile_left_panel_desktop_view">
                                     <a href="<?php echo base_url() ?>welcome/user_profile">
                                         <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
                                         <?php echo $this->session->userdata('user_logged_name'); ?>
                                     </a>
+                                </div>
+                                <div class="profile_left_panel_mobile_view">
+                                    <a href="javascript:void(0)" onclick="open_artist_profile();">
+                                        <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
+                                        <?php echo $this->session->userdata('user_logged_name'); ?>
+                                    </a>
+                                </div>
                                 </li>
                             <?php } ?>
                         

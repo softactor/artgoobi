@@ -91,6 +91,12 @@
         position: relative !important;
         z-index: 299 !important;
     }
+    .profile_left_panel_desktop_view{
+        display: none;
+    }
+    .profile_left_panel_mobile_view{
+        display: block;
+    }
     .artgoobi_search_box_container{
         width: 310px !important;
         margin: 0 !important;

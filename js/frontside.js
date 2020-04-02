@@ -308,6 +308,14 @@ function viewAboutUsDetailsHome() {
     $('#artgoobi_about_us').show('slow');
 }
 
+function open_artist_profile(){
+    if ($('#profile_left_panel_id_section').css('display') == 'none') {
+        $("#profile_left_panel_id_section").show("slow");
+    }else{
+        $("#profile_left_panel_id_section").hide("slow");
+    }
+}
+
 $("#price").keypress(function (e) {
 //if the letter is not digit then display error and don't type anything
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
