@@ -21,7 +21,7 @@ if (isset($galleries) && !empty($galleries)) {
             ?>
                 <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
                     <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>" alt="img" />
-                    <a class="btn btn-block btn-success" href="<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>" target="_blank" rel="noopener">View Details</a>
+                    <a class="btn btn-block btn-success" href="<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>" rel="noopener">View Details</a>
                 </div>
             <?php } ?>
         </div>
