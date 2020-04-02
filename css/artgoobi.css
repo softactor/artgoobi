@@ -34,14 +34,21 @@ ul#left_navbar_cusom_width{
     border: none !important;
 }
 #navbar ul{
-    margin-top: 3%;
+    margin-top: 0;
 }
 
 /* header Search Input style */
 .header_logo_image_text{
     display: none;
 }
-
+ul.top_section_profile_access_desktop_style{
+    list-style: none;
+}
+.top_section_profile_access_desktop_style li{
+    float: right;
+    display: inline;
+    padding: 0 1%;
+}
 .stylish-input-group .input-group-addon{
     background: white !important; 
 }
