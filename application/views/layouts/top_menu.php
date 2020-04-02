@@ -22,7 +22,7 @@
                             <li><a href="<?php echo base_url('welcome/exhibition_list'); ?>">Exhibition</a></li>
                             <li><a href="<?php echo base_url('welcome/event_list'); ?>">Event</a></li>
                             <li><a href="<?php echo base_url('welcome/gallery_list'); ?>">Artgoobi Gallery</a></li>
-                            <li><a href="<?php echo base_url('welcome/terms_and_conditions'); ?>">Terms & Conditions</a></li>
+                            <li><a href="<?php echo base_url('welcome/faq'); ?>">FAQ</a></li>
                             <li><a href="<?php echo base_url('welcome/contact_us'); ?>">Contact Us</a></li>
                         </ul>                        
                     </div><!--/.nav-collapse -->

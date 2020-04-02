@@ -10,7 +10,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index() {
-        $data['title'] = "Artgoobi || Home";
+        $data['title'] = "Artgoobi | Home";
         $data['active_menu'] = "home";
         // Read All User Data
         $gallery_sql                    = "SELECT * FROM `artwork_info` ORDER BY RAND(), create_time DESC LIMIT 0,15";
@@ -23,7 +23,15 @@ class Welcome extends CI_Controller {
     }
     
     public function contact_us() {
-        $data['title'] = "Artgoobi || Contact Us";
+        $data['title'] = "Artgoobi | Contact Us";
+        $data['active_menu'] = "contact";
+        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
+        $data['header'] = $this->load->view('layouts/header', $data, true);
+        $data['footer'] = $this->load->view('layouts/footer', $data, true);
+        $this->load->view('contact_us', $data);
+    }
+    public function faq() {
+        $data['title'] = "Artgoobi | FAQ";
         $data['active_menu'] = "contact";
         $get_data ['table']                 = "post_data";
         $get_data ['where']['post_type']    = 4; // Only FAQ Data;
@@ -31,11 +39,11 @@ class Welcome extends CI_Controller {
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('contact_us', $data);
+        $this->load->view('faq', $data);
     }
     
     public function about_us() {
-        $data['title'] = "Artgoobi || About Us";
+        $data['title'] = "Artgoobi | About Us";
         $data['active_menu'] = "about";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -44,7 +52,7 @@ class Welcome extends CI_Controller {
     }
 
     public function index_back() {
-        $data['title'] = "Artgoobi || Home";
+        $data['title'] = "Artgoobi | Home";
         // Read All User Data
         $get_data ['table'] = "artwork_info";
         $get_data ['where']['status'] = 1;
@@ -549,7 +557,7 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'];
         $data['artwork_data'] = isset($data['all_data']['data'][0])?$data['all_data']['data'][0]:'';
-        $data['title'] = "Artgoobi || User Profile";
+        $data['title'] = "Artgoobi | User Profile";
         $data['active_menu'] = "gallery";
         
         // get user details data
@@ -748,7 +756,7 @@ class Welcome extends CI_Controller {
         $data['users_info'] = $data['all_data']['data'][0];
         $data['users_data'] = $data['all_data']['data'][0];
         $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
-        $data['title'] = "Artgoobi || User Profile";
+        $data['title'] = "Artgoobi | User Profile";
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -787,7 +795,7 @@ class Welcome extends CI_Controller {
             $data['users_info'] = $data['all_data']['data'][0];
             $data['users_data'] = $data['all_data']['data'][0];
             $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
-            $data['title'] = "Artgoobi || User Profile";
+            $data['title'] = "Artgoobi | User Profile";
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -859,7 +867,7 @@ class Welcome extends CI_Controller {
             $data['users_info'] = $data['all_data']['data'][0];
             $data['users_data'] = $data['all_data']['data'][0];
             $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
-            $data['title'] = "Artgoobi || User Profile";
+            $data['title'] = "Artgoobi | User Profile";
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -1038,7 +1046,7 @@ class Welcome extends CI_Controller {
         if($source_ratio!=$new_ratio)
         {
             // if the new image' ratio is bigger than the source image's ratio or the new image is a square and the source image's height is bigger than it's width, we will take source's width as the width of the image
-            if($new_ratio > $source_ratio || (($new_ratio == 1) && ($source_ratio < 1)))
+            if($new_ratio > $source_ratio | (($new_ratio == 1) && ($source_ratio < 1)))
             {
                 $config['width']    = $image['image_width'];
                 $config['height']   = round($image['image_width']/$new_ratio);
@@ -1061,7 +1069,7 @@ class Welcome extends CI_Controller {
         $thumb_path = $gallery_path.$image['raw_name'].$thumb_name.$image['file_ext'];
         $new_file   = $image['file_name'];
         $new_thumb  = $image['raw_name'].$thumb_name.$image['file_ext'];
-        if(file_exists($image_path) || file_exists($thumb_path))
+        if(file_exists($image_path) | file_exists($thumb_path))
         {
             // we will give it 100 tries. if after 100 tries it can't find a suitable name, then the problem is your imagination in naming the files that you've uploaded
             for($i=1;$i<=100;$i++)
@@ -1690,7 +1698,7 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'][0];
 
-        $data['title'] = "Artgoobi || User Profile";
+        $data['title'] = "Artgoobi | User Profile";
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -1786,7 +1794,7 @@ class Welcome extends CI_Controller {
         $data['artist_id']  = $artist_id;
         $data['artwork_id'] = $artwork_id;
         $data['isShared'] = true;
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
@@ -1824,7 +1832,7 @@ class Welcome extends CI_Controller {
         $event_data = $this->common_model->common_table_data_read($get_data);
         $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($artist_id);
 
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
@@ -1911,7 +1919,7 @@ class Welcome extends CI_Controller {
             $data['users_info']                 = $data['all_data']['data'][0];
             $data['users_data']                 = $data['all_data']['data'][0];
             $data['userProfileDetailsData']     =   userProfileDetailsdataByUserId($user_logged_in);
-            $data['title']                      = "Artgoobi || User Profile";
+            $data['title']                      = "Artgoobi | User Profile";
             $data['active_menu']                = "gallery";
             $data['top_menu']                   = $this->load->view('layouts/top_menu', $data, true);
             $data['header']                     = $this->load->view('layouts/header', $data, true);
@@ -2204,7 +2212,7 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'];
         $data['artwork_data'] = $data['all_data']['data'][0];
-        $data['title'] = "Artgoobi || User Profile";
+        $data['title'] = "Artgoobi | User Profile";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
@@ -2252,13 +2260,13 @@ class Welcome extends CI_Controller {
     }    
     // exhibition details area
     public function exhibition_list(){
-        $data['title'] = "Artgoobi || Exhibition";
+        $data['title'] = "Artgoobi | Exhibition";
         $data['active_menu'] = "exhibition";
         $get_data ['table'] = "post_data";
         $get_data ['where']['post_type'] = 1;
         $artwork_data = $this->common_model->common_table_data_read($get_data);
         $data['exhibitions'] =   $artwork_data['data'];
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
@@ -2281,14 +2289,14 @@ class Welcome extends CI_Controller {
         
         
         $data['active_menu'] = "exhibition";
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         $this->load->view('exhibition_details', $data);
     }
     public function gallery_list(){   
-        $data['title']                  = "Artgoobi || Gallery";
+        $data['title']                  = "Artgoobi | Gallery";
         $data['active_menu'] = "gallery";
         // Read All User Data
         
@@ -2296,7 +2304,7 @@ class Welcome extends CI_Controller {
         $query                          = $this->db->query($gallery_sql);
         $data['galleries']              = $query->result();
         
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
@@ -2321,7 +2329,7 @@ class Welcome extends CI_Controller {
             }            
         }
         $data['galleries'] =   $gallery_array;
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
@@ -2335,7 +2343,7 @@ class Welcome extends CI_Controller {
         $artwork_data = $this->common_model->common_table_data_read($get_data);
         $data['event'] =   $artwork_data['data'][0];
         $data['active_menu'] = "event";
-        $data['title'] = "Artgoobi || Artwork Details";
+        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
@@ -2348,7 +2356,7 @@ class Welcome extends CI_Controller {
         $get_data ['where']['post_type'] = 3;
         $artwork_data = $this->common_model->common_table_data_read($get_data);
         $data['exhibitions'] =   $artwork_data['data'];
-        $data['title']                  = "Artgoobi || Art around you";
+        $data['title']                  = "Artgoobi | Art around you";
         $data['active_menu'] = "event";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2357,7 +2365,7 @@ class Welcome extends CI_Controller {
     }
     public function terms_and_conditions(){
         $data['active_menu'] = "terms";
-        $data['title'] = "Artgoobi || About Us";
+        $data['title'] = "Artgoobi | About Us";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', '', true);
@@ -2388,7 +2396,7 @@ class Welcome extends CI_Controller {
         $event_data = $this->common_model->common_table_data_read($get_data);
         $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
         $data['events'] =   $event_data['data'];
-        $data['title'] = "Artgoobi || User Events";
+        $data['title'] = "Artgoobi | User Events";
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2423,7 +2431,7 @@ class Welcome extends CI_Controller {
         
         $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
         $data['events'] =   $event_data['data'];
-        $data['title'] = "Artgoobi || User Events";
+        $data['title'] = "Artgoobi | User Events";
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2449,7 +2457,7 @@ class Welcome extends CI_Controller {
         $data['users_info'] = $data['all_data']['data'][0];
         $data['users_data'] = $data['all_data']['data'][0];
         $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
-        $data['title'] = "Artgoobi || User Events Create";
+        $data['title'] = "Artgoobi | User Events Create";
         $data['active_menu'] = "gallery";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2490,7 +2498,7 @@ class Welcome extends CI_Controller {
             $data['users_info'] = $data['all_data']['data'][0];
             $data['users_data'] = $data['all_data']['data'][0];
             $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
-            $data['title'] = "Artgoobi || User Events Create";
+            $data['title'] = "Artgoobi | User Events Create";
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2578,7 +2586,7 @@ class Welcome extends CI_Controller {
 
             $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
             $data['events'] =   $event_data['data'];
-            $data['title'] = "Artgoobi || User Events";
+            $data['title'] = "Artgoobi | User Events";
             $data['active_menu'] = "gallery";
             $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
             $data['header'] = $this->load->view('layouts/header', $data, true);
@@ -2739,7 +2747,7 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'];
         $data['artwork_data'] = isset($data['all_data']['data'][0])?$data['all_data']['data'][0]:'';
-        $data['title'] = "Artgoobi || User Profile";
+        $data['title'] = "Artgoobi | User Profile";
         $data['active_menu'] = "gallery";
         
         // get user details data

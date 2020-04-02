@@ -15,7 +15,8 @@
                                 <li id="menu-item-4188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4188"><a href="<?php echo base_url('welcome/about_us'); ?>">About</a></li>
                                 <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/exhibition_list'); ?>">Exhibition</a></li>
                                 <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/event_list'); ?>">Event</a></li>
-                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/event_list'); ?>">Gallery</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/gallery_list'); ?>">Artgoobi Gallery</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/terms_and_conditions'); ?>">Terms & Conditions</a></li>
                                 <li id="menu-item-4201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4201"><a href="<?php echo base_url('welcome/contact_us'); ?>">Contact Us</a></li>
                             </ul>
                         </div>
