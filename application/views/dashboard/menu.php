@@ -67,31 +67,25 @@ $check_param['meny_type']   =   1;// 1=Main Menu;
         ?>
         <li class="<?php echo setActiveMenuClass($activeMenu, 'artwork_media') ?>">
           <a  href="<?php echo base_url() ?>admin/ArtgoobiSetup/index">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-desktop" aria-hidden="true"></i>
             <span>Artwork Media</span>
           </a>
         </li>
         <li class="<?php echo setActiveMenuClass($activeMenu, 'profile') ?>">
           <a  href="<?php echo base_url() ?>admin/dashboard/profile_panel">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-picture-o" aria-hidden="true"></i>
             <span>Profile</span>
           </a>
         </li>
         <li class="<?php echo setActiveMenuClass($activeMenu, 'exhibition') ?>">
           <a  href="<?php echo base_url() ?>admin/exhibition">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-object-group" aria-hidden="true"></i>
             <span>Exhibition</span>
           </a>
         </li>
-<!--        <li class="<?php echo setActiveMenuClass($activeMenu, 'gallery') ?>">
-          <a  href="<?php echo base_url() ?>admin/gallery">
-            <i class="fa fa-graduation-cap"></i>
-            <span>Gallery</span>
-          </a>
-        </li>-->
         <li class="<?php echo setActiveMenuClass($activeMenu, 'events') ?>">
           <a  href="<?php echo base_url() ?>admin/events">
-            <i class="fa fa-graduation-cap"></i>
+            <i class="fa fa-object-ungroup" aria-hidden="true"></i>
             <span>Events</span>
           </a>
         </li>
@@ -131,7 +125,7 @@ $check_param['meny_type']   =   1;// 1=Main Menu;
         </li>
         <li class="<?php echo setActiveMenuClass($activeMenu, 'email_feedback') ?>">
           <a  href="<?php echo base_url() ?>admin/dashboard/contact_feedback">
-            <i class="fa fa-envelope-o"></i>
+            <i class="fa fa-paper-plane" aria-hidden="true"></i>
             <span>Email Feedback</span>
           </a>
         </li>

@@ -18,8 +18,7 @@
               <table id="example2" class="table table-bordered table-striped table-hover">
                 <thead>
                 <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
+                  <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Status</th>
@@ -32,8 +31,7 @@
                             foreach($table_data as $d){
                     ?>
                     <tr>
-                        <td><?php echo $d->first_name; ?></td>
-                        <td><?php echo $d->last_name; ?></td>
+                        <td><?php echo $d->first_name." ".$d->last_name; ?></td>
                         <td><?php echo $d->user_email; ?></td>
                         <td><?php echo $d->phone_no; ?></td>
                         <td>
@@ -77,8 +75,7 @@
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>First Name</th>
-                  <th>Last Name</th>
+                  <th>Name</th>
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Status</th>
