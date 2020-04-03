@@ -103,7 +103,7 @@ class Dashboard extends CI_Controller {
             
             
             $this->session->set_flashdata('success', 'Feedback Reply has been successfully made.');
-            $redirect_url   =   "admin/settings/mail_template_view";
+            $redirect_url   =   "admin/dashboard/contact_feedback";
             redirect($redirect_url);
             
         }// end of form validation success
