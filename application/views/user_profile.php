@@ -26,6 +26,15 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
 <?php } ?>
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
+                        <div class="row">
+                            <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                                <div class="jumbotron text-center">
+                                    <h1 class="service_title">
+                                        <?php echo $users_info->name." Artwork" ?>
+                                    </h1>
+                                </div>                    
+                            </div>
+                        </div>
                         <?php
                         if (isset($artworks_data) && !empty($artworks_data)) {
                             ?>
