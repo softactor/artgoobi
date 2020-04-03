@@ -341,10 +341,10 @@ function sendArtgoobiContactFeedback(){
         data: formData,
         success: function (response) {
             if(response.status == "success"){
-                $('#feedback_name').html("");
-                $('#feedback_email').html("");
-                $('#feedback_phone').html("");
-                $('#feedback_comment').html("");
+                $('#feedback_name').val("");
+                $('#feedback_email').val("");
+                $('#feedback_phone').val("");
+                $('#feedback_comment').val("");
                 swal("Received!", response.message, "success");
                 setTimeout(function () {
                         swal.close()
