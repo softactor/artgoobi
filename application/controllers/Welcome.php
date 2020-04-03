@@ -2966,4 +2966,127 @@ class Welcome extends CI_Controller {
         ];
         echo json_encode($feedback); 
     }
+    
+    public function send_artgoobi_contact_feedback(){ 
+        $name       =   $this->input->post('name');
+        $email      =   $this->input->post('email');
+        $mobile     =   $this->input->post('mobile');
+        $feedback   =   $this->input->post('comment');
+        
+        $fields_empty_error_message     =   "<ol class='swal_error_message_order_list'>";
+        $fields_empty_error             =   false;
+        if(empty($name)){
+            $fields_empty_error     =   true;
+            $fields_empty_error_message.=   "<li>Name is required</li>";
+        }        
+        if(empty($email)){
+            $fields_empty_error     =   true;
+            $fields_empty_error_message.=   "<li>Email is required</li>";
+        }        
+        if(empty($mobile)){
+            $fields_empty_error     =   true;
+            $fields_empty_error_message.=   "<li>Mobile is required</li>";
+        }        
+        if(empty($feedback)){
+            $fields_empty_error     =   true;
+            $fields_empty_error_message.=   "<li>Feedback/Message is required</li>";
+        }
+        $fields_empty_error_message.=   "</ol>";
+        if(!$fields_empty_error){
+            
+            /*
+             *  Get Mail Body:
+             */
+            
+            $paramData['table']                     =   "mail_template";
+            $paramData['where']['email_type']       =   1;
+            $paramData['where']['email_type']       =   1;
+            $is_single                              =   true;
+            $mailConfig                             =   get_table_data_by_param($paramData, $is_single);
+            $postData   =   [
+                'name'          =>  htmlentities($name),
+                'mobile'        =>  htmlentities($mobile),
+                'email'         =>  htmlentities($email),
+                'feedback'      =>  htmlentities($feedback),
+                'receive_time'  =>  date("Y-m-d H:i:s"),
+            ];
+            //insert the ready post
+            $insert_data['fields'] = $postData;
+            $insert_data['table'] = 'feedback_details';
+            $post_data_insert_id = $this->common_model->common_table_data_insert($insert_data);
+            
+            if(isset($mailConfig) && !empty($mailConfig)){
+                $data['emailParam']  =   $mailConfig;
+                $emailBody        = $this->load->view('partial/feedback_mail_body_auto_mail', $data, true);
+                
+                $emailData['email_to']                  =   $email;
+                $emailData['email_from_address']        =   $mailConfig->email_from_address;
+                $emailData['email_from']                =   $mailConfig->email_title;
+                $emailData['email_subject']             =   $mailConfig->email_subject;
+                $emailData['email_content']             =   $emailBody;
+                $emailResponse                          = $this->send_email($emailData);
+            }    
+            
+            $status     =   "success";
+            $message    =   "Your feedback have been successfully received";
+            $data       =   "";
+            
+        }else{
+            $status     =   "error";
+            $message    =   "Please give the required data.";
+            $data       =   $fields_empty_error_message;
+        }        
+        $feedback       =   [
+            'status'    =>  $status,    
+            'message'   =>  $message,
+            'data'      =>  $data
+        ];
+        
+        echo json_encode($feedback);
+    }
+    
+    public function send_email($emailParam) {
+        $htmlContent = '';
+        $config = Array(
+            'protocol'  => 'mail',
+            'smtp_host' => 'sg3plcpnl0094.prod.sin3.secureserver.net',
+            'smtp_port' => 465,
+            'smtp_user' => 'admin.info@artgoobi.com',
+            'smtp_pass' => ')WjSavN27ULe',
+            'mailtype'  => 'html',
+            'newline'   => "\r\n",
+            'crlf'      => "\r\n",
+            'wordwrap'  => "TRUE",
+            'validate'  => "FALSE",
+        );
+        $this->email->initialize($config);
+        $this->load->library('email', $config);
+        $this->email->set_mailtype("html");
+        $this->email->set_newline("\r\n");
+
+        //Email content
+        $this->email->to($emailParam['email_to']);
+        $this->email->from($emailParam['email_from_address'], $emailParam['email_from']);
+        $this->email->subject($emailParam['email_subject']);
+        $this->email->message($emailParam['email_content']);
+
+        //Send email
+        $checkEmail = $this->email->send();
+        $eData = $this->email->print_debugger();
+        if (!$checkEmail) {
+            $status     =   "error";
+            $is_email   =   0;
+            $message    =   $eData;            
+        }else{
+            $status     =   "success";
+            $is_email   =   1;
+            $message    =  "Email has been successfully send.";
+        }
+        
+        $feedback   =   [
+            'status'        =>  $status,
+            'is_email'      =>  $is_email,
+            'message'       =>  $message,
+        ];
+    }
 }

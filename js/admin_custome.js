@@ -122,13 +122,9 @@ function deleteDataByIdAndTable(id, table, redirect_url = '') {
                 success: function (response) {
                     if (response.status == 'success') //if success close modal and reload ajax table
                     {
-                        swal("Deleted", "Artwork have been successfully deleted!", "success");
+                        swal("Deleted!","Data have been successfully deleted", 'success');
                         setTimeout(function () {
-                            if (redirect_url) {
-                                window.location = redirect_url;
-                            } else {
-                                window.location = response.redirect_url;
-                            }
+                            location.reload(true);
                         }, 2000);
                     }
                 }

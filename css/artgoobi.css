@@ -12,6 +12,13 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+ol.swal_error_message_order_list{
+    list-style-position: inside;
+}
+ol.swal_error_message_order_list li{
+    margin: 2% 0;
+    color: red;
+}
 ul#left_navbar_cusom_width{
     /*border: 1px solid !important;*/ 
     width: 85% !important; 

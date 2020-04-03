@@ -39,7 +39,12 @@ $check_param['meny_type']   =   1;// 1=Main Menu;
             </li>            
             <li class="<?php echo setActiveMenuClass($activeSubMenu, 'role_panel') ?>">
                 <a href="<?php echo base_url() ?>admin/settings/role_panel">
-                    <i class="fa fa-qrcode"></i><span>Role Panel</span>
+                    <i class="fa fa-circle-o"></i><span>Role Panel</span>
+                </a>
+            </li>            
+            <li class="<?php echo setActiveMenuClass($activeSubMenu, 'email_template') ?>">
+                <a href="<?php echo base_url() ?>admin/settings/mail_template_view">
+                    <i class="fa fa-circle-o"></i><span>Email Template</span>
                 </a>
             </li>            
           </ul>
@@ -122,6 +127,12 @@ $check_param['meny_type']   =   1;// 1=Main Menu;
           <a  href="<?php echo base_url() ?>admin/invitation">
             <i class="fa fa-envelope-o"></i>
             <span>Invitation</span>
+          </a>
+        </li>
+        <li class="<?php echo setActiveMenuClass($activeMenu, 'email_feedback') ?>">
+          <a  href="<?php echo base_url() ?>admin/email_feedback">
+            <i class="fa fa-envelope-o"></i>
+            <span>Email Feedback</span>
           </a>
         </li>
       </ul>

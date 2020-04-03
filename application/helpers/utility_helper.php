@@ -201,6 +201,14 @@ function get_table_data_by_param($param, $single=false){
         return false;
     }
 }
+function getNameByIdAndTable($table, $id){
+    $CI = get_instance();
+    $CI->load->database();
+    $query = $CI->db->select('*')
+        ->where('id',$id)
+        ->get($table);
+    return $query->row();
+}
 function profile_authentication_check(){
     $CI = & get_instance();
     $user_logged_in_status = $CI->session->userdata('user_logged_in_status');

@@ -332,6 +332,36 @@ function open_artist_profile(artist_id, section_type){
     }
 }
 
+function sendArtgoobiContactFeedback(){
+    var formData = $('#artgoogi_contact_form').serialize();
+    $.ajax({
+        url: base_url_addr + "welcome/send_artgoobi_contact_feedback",
+        type: 'POST',
+        dataType: 'json',
+        data: formData,
+        success: function (response) {
+            if(response.status == "success"){
+                $('#feedback_name').html("");
+                $('#feedback_email').html("");
+                $('#feedback_phone').html("");
+                $('#feedback_comment').html("");
+                swal("Received!", response.message, "success");
+                setTimeout(function () {
+                        swal.close()
+                    }, 2000);
+            }else{
+                swal({
+                    html:true,
+                    title: "Error!", 
+                    text: response.data,
+                    type: "error"
+                });
+            }
+        }
+    });
+}
+
+
 $("#price").keypress(function (e) {
 //if the letter is not digit then display error and don't type anything
     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {

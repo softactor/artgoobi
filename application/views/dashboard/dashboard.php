@@ -16,12 +16,22 @@
 
     <!-- Main content -->
     <section class="content">
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-          <div class="col-md-12 alert alert-success">
-              <h1>Welcome to Dashboard</h1>
-          </div>
-      </div>
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!-- general form elements -->
+                <div class="box box-primary">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Admin Dashboard</h3>
+                    </div>
+                    <div class="box-body">
+                        
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+        </div>
     </section>
     <!-- /.content -->
   </div>

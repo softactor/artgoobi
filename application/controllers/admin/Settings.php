@@ -811,4 +811,87 @@ class Settings extends CI_Controller {
             
         }        
     }
+    
+    public function mail_template_view(){
+        // Read All User Data
+        $get_data ['table'] = "mail_template";
+        $data['all_data'] = $this->common_model->common_table_data_read($get_data);
+        $data['header'] = $this->load->view('dashboard/header','',TRUE);
+        $data['menu'] = $this->load->view('dashboard/menu','',TRUE);
+        $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+        $this->load->view('dashboard/setup/mail_template/list',$data);
+    }
+    public function mail_template_create(){
+        // Read All User Data
+        $get_data ['table'] = "mail_template";
+        $data['all_data'] = $this->common_model->common_table_data_read($get_data);
+        $data['header'] = $this->load->view('dashboard/header','',TRUE);
+        $data['menu'] = $this->load->view('dashboard/menu','',TRUE);
+        $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+        $this->load->view('dashboard/setup/mail_template/create',$data);
+    }
+    public function mail_template_edit($edit_id){
+        $get_data ['table']         =   "mail_template";
+        $get_data ['where']['id']   =   $edit_id; // exhibition Data;
+        $post_data                  =   $this->common_model->common_table_data_read($get_data);
+        $data['post_data']          =   $post_data['data'][0];
+        
+        $data['header']     =   $this->load->view('dashboard/header','',TRUE);
+        $data['menuName']   =   'events';
+        $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
+        $data['footer']     =   $this->load->view('dashboard/footer','',TRUE);
+        
+        $this->load->view('dashboard/setup/mail_template/edit',$data);
+    }
+    
+    public function email_template_store(){
+        // load form validation
+        $this->load->library('form_validation');
+
+        // check validation        
+        $this->form_validation->set_rules('email_type', 'Email Type', 'required');
+        $this->form_validation->set_rules('email_title', 'Mail From', 'required');
+        $this->form_validation->set_rules('email_from_address', 'Mail From Address', 'required');
+        $this->form_validation->set_rules('email_subject', 'Mail Subject', 'required');
+        $this->form_validation->set_rules('salutation', 'Salutation', 'required');
+        $this->form_validation->set_rules('email_body', 'Mail Body', 'required');
+        $this->form_validation->set_rules('email_footer', 'Mail Footer', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $data['header'] = $this->load->view('dashboard/header','',TRUE);
+            $data['menuName']   =   'events';
+            $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
+            $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+            $this->load->view('dashboard/events/create_event',$data);
+        } else {
+            $edit_id    =   $this->input->post("edit_id");
+            // try to make data for insert into post data table
+            $post_data = [
+                'email_type'    => $this->input->post("email_type"),
+                'exhibition_id' => $this->input->post("exhibition_id"),
+                'event_id'      => $this->input->post("event_id"),
+                'email_from_address'   => trim($this->input->post("email_from_address")),
+                'email_title'   => trim($this->input->post("email_title")),
+                'email_subject' => trim($this->input->post("email_subject")),
+                'salutation'    => trim($this->input->post("salutation")),
+                'email_body'    => htmlentities($this->input->post("email_body")),
+                'email_footer'  => htmlentities($this->input->post("email_footer"))
+            ];
+
+            //insert the ready post
+            $insert_data['fields']  = $post_data;
+            $insert_data['table']   = 'mail_template';
+            
+            if(isset($edit_id) && !empty($edit_id)){
+                $insert_data['where']['id']   = $edit_id;
+                $post_data_insert_id = $this->common_model->common_table_data_update($insert_data);            
+                $this->session->set_flashdata('success', 'Email Template Data has been successfully updated');
+            }else{
+                $post_data_insert_id = $this->common_model->common_table_data_insert($insert_data);            
+                $this->session->set_flashdata('success', 'Email Template Data has been successfully added');
+            }
+            $redirect_url   =   "admin/settings/mail_template_view";
+            redirect($redirect_url);
+            
+        }// end of form validation success
+    }
 }
