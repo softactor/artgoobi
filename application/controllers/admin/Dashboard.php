@@ -21,11 +21,20 @@ class Dashboard extends CI_Controller {
     }
     
     public function index(){
-        $data['header'] = $this->load->view('dashboard/header','',TRUE);
         $data['menuName']   =   'dashboard';
+        $data['header'] = $this->load->view('dashboard/header','',TRUE);
         $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
         $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
         $this->load->view('dashboard/dashboard',$data);
+    }
+    public function contact_feedback(){
+        $get_data ['table'] = "feedback_details";
+        $data['all_data'] = $this->common_model->common_table_data_read($get_data);
+        $data['menuName']   =   'dashboard';
+        $data['header'] = $this->load->view('dashboard/header','',TRUE);
+        $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
+        $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+        $this->load->view('dashboard/contact_feedback_list',$data);
     }
 
     public function users_panel(){

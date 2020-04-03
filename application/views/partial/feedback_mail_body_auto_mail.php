@@ -348,9 +348,9 @@
                                     <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                         <tr>
                                             <td>
-                                                <p><?php $emailParam->salutation; ?></p>
-                                                <p><?php $emailParam->email_body; ?></p>
-                                                <p><?php $emailParam->email_footer; ?></p>
+                                                <p><?php echo $emailParam->salutation; ?></p>
+                                                <p><?php echo $emailParam->email_body; ?></p>
+                                                <p><?php echo $emailParam->email_footer; ?></p>
                                             </td>
                                         </tr>
                                     </table>

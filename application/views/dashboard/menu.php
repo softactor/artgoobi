@@ -130,7 +130,7 @@ $check_param['meny_type']   =   1;// 1=Main Menu;
           </a>
         </li>
         <li class="<?php echo setActiveMenuClass($activeMenu, 'email_feedback') ?>">
-          <a  href="<?php echo base_url() ?>admin/email_feedback">
+          <a  href="<?php echo base_url() ?>admin/dashboard/contact_feedback">
             <i class="fa fa-envelope-o"></i>
             <span>Email Feedback</span>
           </a>

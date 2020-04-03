@@ -3013,12 +3013,11 @@ class Welcome extends CI_Controller {
             //insert the ready post
             $insert_data['fields'] = $postData;
             $insert_data['table'] = 'feedback_details';
-            $post_data_insert_id = $this->common_model->common_table_data_insert($insert_data);
+            //$post_data_insert_id = $this->common_model->common_table_data_insert($insert_data);
             
             if(isset($mailConfig) && !empty($mailConfig)){
                 $data['emailParam']  =   $mailConfig;
                 $emailBody        = $this->load->view('partial/feedback_mail_body_auto_mail', $data, true);
-                
                 $emailData['email_to']                  =   $email;
                 $emailData['email_from_address']        =   $mailConfig->email_from_address;
                 $emailData['email_from']                =   $mailConfig->email_title;
