@@ -89,8 +89,8 @@ class Dashboard extends CI_Controller {
             $post_data_insert_id = $this->common_model->common_table_data_update($insert_data);  
             
             $mailConfig['salutation'] = trim($this->input->post("salutation"));
-            $mailConfig['email_body'] = htmlentities($this->input->post("email_body"));
-            $mailConfig['email_footer'] = trim($this->input->post("email_footer"));
+            $mailConfig['email_body'] = $this->input->post("email_body");
+            $mailConfig['email_footer'] = $this->input->post("email_footer");
             $mailConfig['email_to'] = trim($this->input->post("email_to"));
             $mailConfig['email_from_address'] = trim($this->input->post("email_from_address"));
             $mailConfig['email_from'] = trim($this->input->post("email_title"));
