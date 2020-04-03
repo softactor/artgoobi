@@ -2319,7 +2319,7 @@ class Welcome extends CI_Controller {
         $data['active_menu'] = "gallery";
         // Read All User Data
         
-        $gallery_sql                    = "SELECT * FROM `artwork_info` ORDER BY RAND(), create_time DESC";
+        $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 ORDER BY RAND(), create_time DESC";
         $query                          = $this->db->query($gallery_sql);
         $data['galleries']              = $query->result();
         
