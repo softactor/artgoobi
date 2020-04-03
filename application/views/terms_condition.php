@@ -150,7 +150,6 @@
                                     <li>   You can share content(s) of artgoobi on social media</li>
                                     <li>   You can add art relevant event to Event Calendar</li>
                                     <li>    You can write an article on Artgoobi Journal</li>
-                                    <li>   You can earn credit points and enjoy additional services using them</li>
                                     <li>   You can let people know about yourself</li>
                                     <li>    You can publish write-ups and news links on your profile</li>
                                     <li>      You can donate image(s) to other profile with permission</li>
@@ -205,7 +204,6 @@
                         <ol>
                             <li>     You will be liable to deliver original artwork(s), not different than its image you uploaded for sale before, to the designated place through designated method within 15 days from email notification.</li>
                             <li>     You may ask for time extension in written within 7 days from email notification.</li>
-                            <li>     If you failed to follow the terms above (1 & 2), may gain demerit points or face disciplinary action.</li>
                             <li>     You must sign a MoU with Artgoobi at this stage.</li>
                             <li>     Artgoobi will pay you the price of the artwork only after the collector receipt and satisfaction.</li>
                             <li>     If collector returns your artwork, Artgoobi will not pay you for its price. You will collect the artwork from designated place within time with the same condition as you delivered. You may get compensation, which will be subject to insurance, for any damage of your artwork if applicable.</li>
@@ -241,24 +239,7 @@
                         </ol>
                     </li>
                     <li>
-                        <h2>19. Credit Points Earning and Use</h2>
-                        <ol>
-                            <li> 
-                                You will earn credit points to your account from various activities on artgoobi.com as-
-                                <ol>
-                                    <li>    1 point from every single view of your picture by any visitor</li>
-                                    <li>    5 points from every single picture sharing on social media</li>
-                                    <li>    10 points from every single invitation you send people to join artgoobi.com</li>
-                                    <li>    50 points from every single joining through your invitation</li>
-                                    <li>    100 points from every single sale of your artwork</li>
-                                </ol>
-                            </li>
-                            <li>     You may enjoy various additional services on artgoobi.com by using credit points</li>
-                            <li>     Artgoobi will not pay you any cash for your credit points</li>
-                        </ol>
-                    </li>
-                    <li>
-                        <h2>21. Admin Control</h2>
+                        <h2>19. Admin Control</h2>
                         <ol>
                             <li>    Artgoobi admin will reserve all rights to take any decision</li>
                             <li>     Artgoobi admin will reserve all rights to permit any kind of content before published on artgoobi.com</li>
