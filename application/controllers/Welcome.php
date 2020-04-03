@@ -3023,7 +3023,7 @@ class Welcome extends CI_Controller {
                 $emailData['email_from']                =   $mailConfig->email_title;
                 $emailData['email_subject']             =   $mailConfig->email_subject;
                 $emailData['email_content']             =   $emailBody;
-                $emailResponse                          = $this->send_email($emailData);
+                $emailResponse                          =   send_email($emailData);
             }    
             
             $status     =   "success";
@@ -3082,7 +3082,7 @@ class Welcome extends CI_Controller {
             $message    =  "Email has been successfully send.";
         }
         
-        $feedback   =   [
+        return $feedback   =   [
             'status'        =>  $status,
             'is_email'      =>  $is_email,
             'message'       =>  $message,

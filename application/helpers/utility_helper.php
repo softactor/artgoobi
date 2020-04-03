@@ -239,7 +239,7 @@ function check_duplicate_data($param){
     return $CI->db->count_all_results();
 }
 function human_format_date($timestamp){
-    return date("F jS, Y h:i:s", strtotime($timestamp)); //September 30th, 2013
+    return date("F jS, Y h:i:s A", strtotime($timestamp)); //September 30th, 2013
 }
 //Relative Date Function
 
@@ -631,3 +631,49 @@ function generate_secrate_key(){
     $random_key     = random_string('alnum',10);
     return $random_key;
 }
+
+function send_email($emailParam) {
+        $CI             = get_instance();
+        $htmlContent = '';
+        $config = Array(
+            'protocol'  => 'mail',
+            'smtp_host' => 'sg3plcpnl0094.prod.sin3.secureserver.net',
+            'smtp_port' => 465,
+            'smtp_user' => 'admin.info@artgoobi.com',
+            'smtp_pass' => ')WjSavN27ULe',
+            'mailtype'  => 'html',
+            'newline'   => "\r\n",
+            'crlf'      => "\r\n",
+            'wordwrap'  => "TRUE",
+            'validate'  => "FALSE",
+        );
+        $CI->email->initialize($config);
+        $CI->load->library('email', $config);
+        $CI->email->set_mailtype("html");
+        $CI->email->set_newline("\r\n");
+
+        //Email content
+        $CI->email->to($emailParam['email_to']);
+        $CI->email->from($emailParam['email_from_address'], $emailParam['email_from']);
+        $CI->email->subject($emailParam['email_subject']);
+        $CI->email->message($emailParam['email_content']);
+
+        //Send email
+        $checkEmail = $CI->email->send();
+        $eData = $CI->email->print_debugger();
+        if (!$checkEmail) {
+            $status     =   "error";
+            $is_email   =   0;
+            $message    =   $eData;            
+        }else{
+            $status     =   "success";
+            $is_email   =   1;
+            $message    =  "Email has been successfully send.";
+        }
+        
+        return $feedback   =   [
+            'status'        =>  $status,
+            'is_email'      =>  $is_email,
+            'message'       =>  $message,
+        ];
+    }

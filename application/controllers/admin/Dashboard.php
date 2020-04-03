@@ -36,6 +36,78 @@ class Dashboard extends CI_Controller {
         $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
         $this->load->view('dashboard/contact_feedback_list',$data);
     }
+    public function contact_feedback_edit($feedback_id){
+        $get_data ['table']                 =   "mail_template";
+        $get_data ['where']['email_type']   =   5; // exhibition Data;
+        $mail_template_data                 =   $this->common_model->common_table_data_read($get_data);
+        $data['mail_template_data']         =   $mail_template_data['data'][0];
+        
+        $get_data                   =   [];
+        $get_data ['table']         =   "feedback_details";
+        $get_data ['where']['id']   =   $feedback_id; // exhibition Data;
+        $post_data                  =   $this->common_model->common_table_data_read($get_data);
+        $data['post_data']          =   $post_data['data'][0];
+        $data['menuName']   =   'dashboard';
+        $data['header'] = $this->load->view('dashboard/header','',TRUE);
+        $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
+        $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+        $this->load->view('dashboard/contact_feedback_edit',$data);
+    }
+    
+    public function contact_feedback_reply(){
+        // load form validation
+        $this->load->library('form_validation');
+
+        // check validation        
+        $this->form_validation->set_rules('email_title', 'Mail From', 'required');
+        $this->form_validation->set_rules('email_from_address', 'Mail From Address', 'required');
+        $this->form_validation->set_rules('salutation', 'Mail Salutation', 'required');
+        $this->form_validation->set_rules('email_subject', 'Mail Subject', 'required');
+        $this->form_validation->set_rules('email_body', 'Mail Body', 'required');
+        $this->form_validation->set_rules('email_footer', 'Mail Footer', 'required');
+        $this->form_validation->set_rules('email_to', 'Mail To Address', 'required');
+        if ($this->form_validation->run() == FALSE) {
+            $data['header'] = $this->load->view('dashboard/header','',TRUE);
+            $data['menuName']   =   'dashboard';
+            $data['menu'] = $this->load->view('dashboard/menu',$data,TRUE);
+            $data['footer'] = $this->load->view('dashboard/footer','',TRUE);
+            $this->load->view('dashboard/contact_feedback_edit',$data);
+        } else {
+            $edit_id    =   $this->input->post("edit_id");
+            // try to make data for insert into post data table
+            $post_data = [
+                'is_answer'     => 1,
+                'answer_details'=> htmlentities($this->input->post("email_body")),
+                'answer_time'   => date("Y-m-d H:i:s"),
+                'answer_by'     => $this->session->userdata('logged_in')
+            ];
+
+            //insert the ready post
+            $insert_data['fields']  = $post_data;
+            $insert_data['table']   = 'feedback_details';
+            $insert_data['where']['id']   = $edit_id;
+            $post_data_insert_id = $this->common_model->common_table_data_update($insert_data);  
+            
+            $mailConfig['salutation'] = trim($this->input->post("salutation"));
+            $mailConfig['email_body'] = htmlentities($this->input->post("email_body"));
+            $mailConfig['email_footer'] = trim($this->input->post("email_footer"));
+            $mailConfig['email_to'] = trim($this->input->post("email_to"));
+            $mailConfig['email_from_address'] = trim($this->input->post("email_from_address"));
+            $mailConfig['email_from'] = trim($this->input->post("email_title"));
+            $mailConfig['email_subject'] = trim($this->input->post("email_subject"));
+            
+            $data['emailParam']  =   $mailConfig;
+            $emailBody        = $this->load->view('partial/feedback_mail_body_reply_mail', $data, true);
+            $mailConfig['email_content']=   $emailBody;
+            $emailResponse=   send_email($mailConfig);
+            
+            
+            $this->session->set_flashdata('success', 'Feedback Reply has been successfully made.');
+            $redirect_url   =   "admin/settings/mail_template_view";
+            redirect($redirect_url);
+            
+        }// end of form validation success
+    }
 
     public function users_panel(){
         // Read All User Data

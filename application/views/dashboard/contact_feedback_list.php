@@ -43,6 +43,7 @@ $check_param['meny_type'] = 2;
                                         <th>Phone</th>
                                         <th>Name</th>
                                         <th>Receive Time</th>
+                                        <th>Reply Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -57,9 +58,10 @@ $check_param['meny_type'] = 2;
                                             <td><?php echo (isset($data->mobile) && !empty($data->mobile) ? $data->mobile : "No Data"); ?></td>
                                             <td><?php echo (isset($data->email) && !empty($data->email) ? $data->email : "No Data"); ?></td>
                                             <td><?php echo human_format_date($data->receive_time); ?></td>
+                                            <td><?php echo (isset($data->is_answer) && $data->is_answer == 1 ? '<span class="label label-success">Replyed</span>' : '<span class="label label-danger">Pending</span>'); ?></td>
                                             <td>
                                                 <a href="<?php echo base_url('admin/dashboard/contact_feedback_edit/' . $data->id) ?>"><button type="button" class="btn btn-flat btn-success small">Edit</button></a>
-                                                <a href="#" onclick="deleteDataByIdAndTable(<?php echo $data->id; ?>,'mail_template');"><button type="button" class="btn btn-flat btn-danger small">Delete</button></a>
+                                                <a href="#" onclick="deleteDataByIdAndTable(<?php echo $data->id; ?>,'feedback_details');"><button type="button" class="btn btn-flat btn-danger small">Delete</button></a>
                                             </td>
                                         </tr>
         <?php $sl++;
