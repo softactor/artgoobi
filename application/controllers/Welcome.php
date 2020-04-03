@@ -13,7 +13,7 @@ class Welcome extends CI_Controller {
         $data['title'] = "Artgoobi | Home";
         $data['active_menu'] = "home";
         // Read All User Data
-        $gallery_sql                    = "SELECT * FROM `artwork_info` ORDER BY RAND(), create_time DESC LIMIT 0,15";
+        $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 ORDER BY RAND(), create_time DESC LIMIT 0,15";
         $query                          = $this->db->query($gallery_sql);
         $data['galleries']              = $query->result();
         $data['top_menu']               = $this->load->view('layouts/top_menu', $data, true);
