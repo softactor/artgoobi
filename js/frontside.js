@@ -307,12 +307,28 @@ function viewAboutUsDetailsHome() {
     $('.individual_service_item').hide('slow');
     $('#artgoobi_about_us').show('slow');
 }
-
-function open_artist_profile(){
-    if ($('#profile_left_panel_id_section').css('display') == 'none') {
-        $("#profile_left_panel_id_section").show("slow");
+function get_artist_profile_data(profile_id){
+    var responsedata;
+    $.ajax({
+        url: base_url_addr + "welcome/get_artist_profile_data",
+        type: 'POST',
+        dataType: 'json',
+        data: 'profile_id=' + profile_id,
+        async: false,
+        success: function (response) {
+            responsedata    =  response; 
+        }
+    });
+    return responsedata;
+}
+function open_artist_profile(artist_id, section_type){
+    var profileData = get_artist_profile_data(artist_id);
+    if ($('#'+section_type).css('display') == 'none') {
+        $("#"+section_type).show("slow");
+        $("#"+section_type).html(profileData.data);
     }else{
-        $("#profile_left_panel_id_section").hide("slow");
+        $("#"+section_type).hide("slow");
+        $("#"+section_type).html("");
     }
 }
 

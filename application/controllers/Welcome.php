@@ -568,6 +568,25 @@ class Welcome extends CI_Controller {
         $data['profile_left_panel'] = $this->load->view('profile_left_panel', '', true);
         $this->load->view('user_profile', $data);
     }
+    public function get_artist_profile_data(){
+        // need to work here after breakfast 
+        // first check ajax call
+        $user_logged_in = $this->input->post('profile_id');
+        // Read All User Data
+        $get_data ['table'] = "users";
+        $get_data ['where']['id= '] = $user_logged_in; // Exclude Super Admin;
+        $data['all_data'] = $this->common_model->common_table_data_read($get_data);
+        $data['users_info'] = $data['all_data']['data'][0];
+        $data['users_data'] = $data['all_data']['data'][0];
+        // get user details data
+        $data['userProfileDetailsData']   =   userProfileDetailsdataByUserId($user_logged_in);
+        $profile_body_data        = $this->load->view('partial/profile_details_by_ajax_request', $data, true);
+        $feedbackData   =   [
+            'status'    => 'success',
+            'data'      => $profile_body_data
+        ];
+        echo json_encode($feedbackData);
+    }
     public function get_profile_info_by_id(){
         $data['profile_data']   = userProfileDetailsdataByUserId($this->input->post('id'));
         $modal_body_data        = $this->load->view('modal/user_profile_modal_body_data', $data, true);

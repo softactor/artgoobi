@@ -43,21 +43,29 @@ if (isset($users_info->status) && $users_info->status == 1) {
                             </div>
                         </div>
                         <div class="col-sm-12 col-xs-12 col-md-3 col-lg-3 col-xl-3">
-                            <div class="pull-right">
-<!--                                            <div class="fb-share-button" data-href="<?php echo base_url('welcome/artwork_details/' . $artist_id . '/' . $artwork_id); ?>" data-layout="button" data-size="small">
-                                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo base_url('welcome/artwork_details/' . $artist_id . '/' . $artwork_id); ?>;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a>
-                                </div>-->
-                                <!-- AddToAny BEGIN -->
-                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-                                    <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-                                    <a class="a2a_button_facebook"></a>
-                                    <a class="a2a_button_twitter"></a>
-                                    <a class="a2a_button_email"></a>
-                                    <a class="a2a_button_pinterest"></a>
+                            <div class="row">
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="pull-left" id="artwork_details_profile_mobile_section">
+                                        <div class="artist_details_in_artwork_details">
+                                            <a href="javascript:void(0)" onclick="open_artist_profile('<?php echo $users_data->id; ?>','artwork_details_profile_show_section');"><i class="fa fa-braille" aria-hidden="true"></i> View Profile Details</a>
+                                        </div>
+                                        <div id="artwork_details_profile_show_section"></div>
+                                    </div>
                                 </div>
-                                <script async src="https://static.addtoany.com/menu/page.js"></script>
-                                <!-- AddToAny END -->
-                            </div>
+                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                    <div class="pull-right">
+                                        <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                                            <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+                                            <a class="a2a_button_facebook"></a>
+                                            <a class="a2a_button_twitter"></a>
+                                            <a class="a2a_button_email"></a>
+                                            <a class="a2a_button_pinterest"></a>
+                                        </div>
+                                        <script async src="https://static.addtoany.com/menu/page.js"></script>
+                                        <!-- AddToAny END -->
+                                    </div>
+                                </div>                            
+                            </div>                            
                         </div>
                     </div>
                 </div>

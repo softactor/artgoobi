@@ -24,7 +24,9 @@ ul#left_navbar_cusom_width{
 }
 .profile_left_panel_mobile_view{
     display: none;
-    
+}
+#artwork_details_profile_mobile_section{
+    display: none;
 }
 .copyright-container{
     width: 100%;

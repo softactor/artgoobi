@@ -41,7 +41,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
                         }
                     ?>
                 </a>
-                    <?php } ?>
+                    <?php } // End of Profile check; ?>
             </div>
         </div>
         <div class="row">

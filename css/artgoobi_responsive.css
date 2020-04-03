@@ -97,6 +97,9 @@
     .profile_left_panel_mobile_view{
         display: block;
     }
+    #artwork_details_profile_mobile_section{
+        display: block;
+    }
     .artgoobi_search_box_container{
         width: 310px !important;
         margin: 0 !important;
