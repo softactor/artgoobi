@@ -39,8 +39,8 @@ class Dashboard extends CI_Controller {
     public function contact_feedback_edit($feedback_id){
         $get_data ['table']                 =   "mail_template";
         $get_data ['where']['email_type']   =   5; // exhibition Data;
-        $mail_template_data                 =   $this->common_model->common_table_data_read($get_data);
-        $data['mail_template_data']         =   $mail_template_data['data'][0];
+        $mail_template_data                 =   $this->common_model->common_table_data_read($get_data);        
+        $data['mail_template_data']         =   (isset($mail_template_data['data'][0]) && !empty($mail_template_data['data'][0]) ? $mail_template_data['data'][0] : "");
         
         $get_data                   =   [];
         $get_data ['table']         =   "feedback_details";
