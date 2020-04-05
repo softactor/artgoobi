@@ -51,6 +51,12 @@
                             <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name">
                             <span class="help-block"></span>
                         </div>
+                        <div class="form-group">
+                            <label>Profile Link Name</label><span> like artgoobi.com/your.profile.link.name</span>
+                            <input onkeyup="check_profile_name_availability(this.value);" type="text" id="profile_link_name" name="profile_link_name" class="form-control" placeholder="Enter Profile Link name">
+                            <span class="help-block"></span>
+                            <span id="profile_link_name_status"></span>
+                        </div>
                         <div class="form-group row">
                             <label class="col-md-12">Date of Birth</label>
                             <div class="col-md-4">
