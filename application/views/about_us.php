@@ -1,16 +1,29 @@
 <?php echo $header; ?>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12 col-lg-12">
-        <div class="jumbotron text-center">
-            <p class="sub_title">
-                Artgoobi, a concern of ‘180 Degrees’, defines itself as a online platform with an express goal of empowering artists with efficacious tools to connect
-                with the global art scene and to promote art as social business. In the same vein it makes it a prerogative to arouse the slumbering art market into being a socially
-                supportive and sustainable force to leverage art in a way that helps nourish and manifest the potentials of change and growth that points
-                to new beginnings. We are aware that many a talented artist veers away
-                into other fields to eke out a living compromising their passion for art. Moreover, an art market that has shown a steady decline over recent years does very little
-                to encourage artists to try and break new grounds and experiment with styles and techniques in search of a language of their own. 180 Degrees, with the support
-                of like-minded people and organizations working with similar goals, seeks to initiate programmmes and events to advantage the artists
-            </p>
+        <div class="row">
+            <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <div class="jumbotron text-center">
+                    <div class="page-header">
+                        <div class="heading_featured">
+                            <h3>About Us</h3>
+                        </div>      
+                    </div>
+                </div>                    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <p>
+                    Artgoobi, a concern of ‘180 Degrees’, defines itself as a online platform with an express goal of empowering artists with efficacious tools to connect
+                    with the global art scene and to promote art as social business. In the same vein it makes it a prerogative to arouse the slumbering art market into being a socially
+                    supportive and sustainable force to leverage art in a way that helps nourish and manifest the potentials of change and growth that points
+                    to new beginnings. We are aware that many a talented artist veers away
+                    into other fields to eke out a living compromising their passion for art. Moreover, an art market that has shown a steady decline over recent years does very little
+                    to encourage artists to try and break new grounds and experiment with styles and techniques in search of a language of their own. 180 Degrees, with the support
+                    of like-minded people and organizations working with similar goals, seeks to initiate programmmes and events to advantage the artists
+                </p>
+            </div>
         </div>
         <!-- Example row of columns -->
         <div class="row service_item artgoobi_about_us" id="artgoobi_about_us">

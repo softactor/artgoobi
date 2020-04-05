@@ -324,8 +324,8 @@ function get_artist_profile_data(profile_id){
 function open_artist_profile(artist_id, section_type){
     var profileData = get_artist_profile_data(artist_id);
     if ($('#'+section_type).css('display') == 'none') {
-        $("#"+section_type).show("slow");
         $("#"+section_type).html(profileData.data);
+        $("#"+section_type).show("slow");
     }else{
         $("#"+section_type).hide("slow");
         $("#"+section_type).html("");

@@ -49,6 +49,18 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    .heading_featured h3 {
+        letter-spacing: 4pt !important;
+        font-size: 20pt;
+        font-weight: bold;
+    }
+    .navbar-toggle{
+        margin-right: 5px;
+    }
+    .jumbotron{
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+    }
     .navbar-default{
         margin-bottom: 0 !important;
     }

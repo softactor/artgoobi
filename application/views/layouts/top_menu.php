@@ -12,7 +12,10 @@
                         </button>
                         <a class="navbar-brand navbar_brand_custom" href="<?php echo base_url() ?>">
                             <img id="artgoobi_header_image_logo" class="header_logo_image_text" src="<?php echo base_url() ?>logo.png" height="105"/>
-                            <span id="artgoobi_header_image_text" class="header_logo_image_text">Artgoobi</span>
+                            <span id="artgoobi_header_image_text" class="header_logo_image_text">
+                                <img class="img img-responsive" src="<?php echo base_url() ?>logo.png" style="margin-top: -15px;padding-top: 0;height: 45px; float: left;"/>
+                                <div style="float: right;margin-top: -8px;padding-left: 10px;">Artgoobi</div>
+                            </span>
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
@@ -88,4 +91,5 @@
             </div>            
         </div>     
     </div>
+    <div id="profile_left_panel_id_section" class="profile_left_panel_desktop_view"></div>
 </div>

@@ -12,6 +12,15 @@ if (isset($users_info->status) && $users_info->status == 1) {
 <div class="row">
     <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12">
         <div class="row">
+            <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <div class="jumbotron text-center">
+                    <h1 class="service_title">
+                        Artwork Details
+                    </h1>
+                </div>                    
+            </div>
+        </div>
+        <div class="row">
             <!-- here profile left panel will go -->
             <?php echo $profile_left_panel; ?>
             <!-- End profile left panel will go -->
@@ -47,12 +56,12 @@ if (isset($users_info->status) && $users_info->status == 1) {
                                 <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
                                     <div class="pull-left" id="artwork_details_profile_mobile_section">
                                         <div class="artist_details_in_artwork_details">
-                                            <a href="javascript:void(0)" onclick="open_artist_profile('<?php echo $users_data->id; ?>','artwork_details_profile_show_section');"><i class="fa fa-braille" aria-hidden="true"></i> View Profile Details</a>
+                                            <a href="javascript:void(0)" onclick="open_artist_profile('<?php echo $users_data->id; ?>', 'artwork_details_profile_show_section');"><i class="fa fa-braille" aria-hidden="true"></i> View Profile Details</a>
                                         </div>
                                         <div id="artwork_details_profile_show_section"></div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
                                     <div class="pull-right">
                                         <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
                                             <a class="a2a_dd" href="https://www.addtoany.com/share"></a>
@@ -89,11 +98,30 @@ if (isset($users_info->status) && $users_info->status == 1) {
                                                 </a>
                                             </div>
                                         </div>
-                                <?php }
-                            }
+                                    <?php
+                                    }
+                                }
+                                ?>
+                            </div>
+                        <?php } ?>
+                        <?php
+                        if (isset($galleries) && !empty($galleries)) {
                             ?>
+                            <div class="front_art_work_wrapper_small_device">
+                                <div class="row">
+                                    <?php
+                                    foreach ($galleries as $artwork) {
+                                        ?>
+                                        <a href="<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>" rel="noopener">
+                                            <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
+                                                <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>" alt="img" />
+                                            </div>
+                                        </a>
+    <?php } ?>
+                                </div>
                             </div>
 <?php } ?>
+                        <div class="clearfix"></div>
                     </div>
                 </div>
                 <!--End artist other artwork block-->                             

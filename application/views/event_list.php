@@ -1,12 +1,17 @@
 <?php echo $header; ?>
 <div class="row">
     <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
-        <!-- Content Content Area Start -->
-            <div class="page-header">
-                <div class="heading_featured">
-                    <h3>art around you</h3>
-                </div>      
-            </div>     
+        <div class="row">
+            <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <div class="jumbotron text-center">
+                    <div class="page-header">
+                        <div class="heading_featured">
+                            <h3>art around you</h3>
+                        </div>      
+                    </div>
+                </div>                    
+            </div>
+        </div>    
         <div class="row">
             <div class="col-md-12 col-sm-12 col-xl-12">
                 <div class="row">

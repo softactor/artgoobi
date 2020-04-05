@@ -1794,6 +1794,7 @@ class Welcome extends CI_Controller {
         $get_data = [];
         $get_data ['table'] = "artwork_info";
         $get_data ['where']['artist_id= '] = $artist_id; // Exclude Super Admin;
+        $get_data ['where']['id!= '] = $artwork_id; // Exclude Super Admin;
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['galleries'] = $data['all_data']['data'];
         $data['artwork_data_details'] = $data['all_data']['data'][0];
@@ -2563,7 +2564,7 @@ class Welcome extends CI_Controller {
             $insert_data['table'] = 'post_data';
 
             $post_data_insert_id = $this->common_model->common_table_data_insert($insert_data);
-            $this->session->set_flashdata('success', 'Event has added successfully');
+            $this->session->set_flashdata('success', 'Event has been added successfully');
             $redirect_url   =   "welcome/user_event_create";
             redirect($redirect_url);
             
@@ -2650,7 +2651,7 @@ class Welcome extends CI_Controller {
             $update_data['table']               = 'post_data';
             $update_result                      = $this->common_model->common_table_data_update($update_data);
             if($update_result){                
-                $this->session->set_flashdata('success', 'Exhibition has updated successfully');
+                $this->session->set_flashdata('success', 'Event has been updated successfully');
                 $redirect_url   =   "welcome/user_event_list/";
                 redirect($redirect_url);
             }

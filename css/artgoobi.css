@@ -12,6 +12,10 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+.jumbotron{
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+    }
 ol.swal_error_message_order_list{
     list-style-position: inside;
 }
@@ -30,6 +34,9 @@ ul#left_navbar_cusom_width{
     width: 100%;
 }
 .profile_left_panel_mobile_view{
+    display: none;
+}
+#artwork_details_profile_show_section{
     display: none;
 }
 #artwork_details_profile_mobile_section{
@@ -446,9 +453,8 @@ img {
     font-size: 11pt;
     color:#464646;
 }
-.heading_featured {
-/*    margin: .5% 0;
-    padding: .5%;*/
+.heading_featured h3{
+    color: #6c8cc7 !important;
 }
 h2.post-title {
     text-align: left;
@@ -1075,6 +1081,40 @@ img.circle_profile_image {
     margin: 0 auto;
     height: 100%;
     width: auto;
+}
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 3px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.box-header {
+    color: #444;
+    display: block;
+    padding: 10px;
+    position: relative;
+}
+.box-header.with-border {
+    border-bottom: 1px solid #f4f4f4;
+}
+.box-body {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    padding: 10px;
+}
+.box-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff;
 }
 
 @keyframes jssorl-009-spin {
