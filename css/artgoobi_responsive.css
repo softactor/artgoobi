@@ -33,6 +33,7 @@
 */
 
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
 }
 
 /* 
@@ -41,6 +42,78 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
+    .heading_featured h3 {
+        letter-spacing: 4pt !important;
+        font-size: 20pt;
+        font-weight: bold;
+    }
+    .navbar-toggle{
+        margin-right: 5px;
+    }
+    .jumbotron{
+        padding: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .navbar-default{
+        margin-bottom: 0 !important;
+    }
+    #artgoobi_header_image_text{
+        display: inline-block !important;
+    }
+    #artgoobi_header_image_logo{
+        display: none !important;
+    }
+    .front_art_work_wrapper{
+        display: none;
+    }
+    .front_art_work_wrapper_small_device{
+        display: inline-block;
+        margin-top: 5%;
+    }
+    .front_art_work_wrapper_small_device img{
+        margin: 1% 0;
+    }
+    .front_art_work_wrapper_small_device a{
+        position: relative;
+        z-index: 299;
+    }
+    #navbar{
+        z-index: 399;
+        background-color: #f8f8f8 !important;
+    }
+    .nav li{
+        background-color: white !important;
+        border-top: .5px solid lightgray !important;        
+    }
+    #navbar ul{
+        margin-top: 0 !important;
+    }
+    .navbar_brand_custom {
+        padding: 20px 5px 2px 3px;
+        margin-bottom: 0;
+    }
+    ul.profile_menu_style{
+        position: relative !important;
+        z-index: 299 !important;
+    }
+    .profile_left_panel_desktop_view{
+        display: none;
+    }
+    .profile_left_panel_mobile_view{
+        display: block;
+    }
+    #artwork_details_profile_mobile_section{
+        display: block;
+    }
+    .artgoobi_search_box_container{
+        width: 310px !important;
+        margin: 0 !important;
+    }
+    .search_box_container_separation{
+        float: left;
+        width: 100%;
+        margin: 2px 0;
+    }
 }
 
 /* 
