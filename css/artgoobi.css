@@ -644,13 +644,13 @@ ul.others_section li{
 }
 
 .center_image_container {
-  display: flex; /* Flexible layout container */
-  justify-content: center; /* Horizontal center alignment */
-  align-items: center; /* Vertical center alignment */
-  /*background: lightblue;*/
-  /* Fixed size container */
+/*  display: flex;  Flexible layout container 
+  justify-content: center;  Horizontal center alignment 
+  align-items: center;  Vertical center alignment 
+  background: lightblue;
+   Fixed size container 
   height: 200px;
-  width: 100%;
+  width: 100%;*/
 }
 .related-time-style{
     margin-top: 2%;
