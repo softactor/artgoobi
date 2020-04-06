@@ -42,6 +42,15 @@
 */
 
 @media (min-width: 481px) and (max-width: 767px) {
+    .signup_welcome {
+        letter-spacing: 5px;
+        color: #6c8cc7;
+        text-align: center;
+        padding: 3% 0;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20pt;
+    }
     #slider-thumbs{
         display: none;
     }
@@ -125,6 +134,15 @@
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
+    .signup_welcome {
+        letter-spacing: 5px;
+        color: #6c8cc7;
+        text-align: center;
+        padding: 3% 0;
+        font-size: 20px;
+        font-weight: bold;
+        line-height: 20pt;
+    }
     #slider-thumbs{
         display: none;
     }
