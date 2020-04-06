@@ -290,7 +290,10 @@ function deleteConfirmationProcess(){
     });
 }
 
-function showSignupFormFields(userType){ 
+function showSignupFormFields(userType){
+    $('#artwork_signup_option_artist').hide();
+    $('#artwork_signup_option_collector').hide();
+    $('#artwork_signup_option_visitor').hide();
     switch(userType){
         case 'artist':
             var userTypeId  =   6;
@@ -309,7 +312,7 @@ function showSignupFormFields(userType){
             var signup_welcome  =   "Welcome to artgoobi as Artist";
             
     }
-    $('#signup_form_section').show('slow');
+    $('#artwork_signup_option_'+userType).show('slow');
     $('#signup_welcome').html(signup_welcome);
     $('#push_signup_type').val(userTypeId);
 }

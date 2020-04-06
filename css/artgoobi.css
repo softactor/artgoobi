@@ -12,6 +12,12 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+.artwork_signup_option{
+    display: none;
+}
+#artwork_signup_option_artist{
+    display: block;
+}
 .jumbotron{
         padding: 5px !important;
         margin-bottom: 5px !important;
@@ -861,11 +867,13 @@ span#profile_edit_image{
     cursor: pointer;
 }
 .signup_welcome{
-    letter-spacing: 14px;
-    color: #e1e1e1;
+    letter-spacing: 5px;
+    color: #6c8cc7;
     text-align: center;
     padding: 3% 0;
-    font-size: 30px;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 10pt;
 }
 .artwork_signup_option:hover{
     border: 1px solid #EBF4FA;

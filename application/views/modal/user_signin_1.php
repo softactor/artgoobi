@@ -10,41 +10,24 @@
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col col-md-12">
-                            <h3 class="signup_welcome" id="signup_welcome">Welcome to artgoobi</h3>
-                        </div>
-                    </div>
-                    <div id="signup_form_section">                        
-                        <div class="form-group">
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" checked value="artist" onclick="showSignupFormFields('artist');">Artist
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="collector" onclick="showSignupFormFields('collector');">Collector
-                            </label>
-                            <label class="radio-inline">
-                                <input type="radio" name="optradio" value="visitor" onclick="showSignupFormFields('visitor');">Visitor
-                            </label>
-                        </div>
-                        <div class="row">
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="artwork_signup_option" id="artwork_signup_option_artist">
+                        <div class="col col-md-4">
+                            <div class="artwork_signup_option" id="artwork_signup_option_artist" onclick="showSignupFormFields('artist');">
                                 <h2>artist</h2>
                                 <p>
                                     Want to create my own profile and show my artworks
                                 </p>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="artwork_signup_option" id="artwork_signup_option_collector">
+                        <div class="col col-md-4">
+                            <div class="artwork_signup_option" id="artwork_signup_option_collector" onclick="showSignupFormFields('collector');">
                                 <h2>collector</h2>
                                 <p>
                                     Want to show artworks from my collection and collect more
                                 </p>
                             </div>
                         </div>
-                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="artwork_signup_option" id="artwork_signup_option_visitor">
+                        <div class="col col-md-4">
+                            <div class="artwork_signup_option" id="artwork_signup_option_visitor" onclick="showSignupFormFields('visitor');">
                                 <h2>visitor</h2>
                                 <p>
                                     Want to visit and and collect artworks
@@ -52,6 +35,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col col-md-12">
+                            <h3 class="signup_welcome" id="signup_welcome">Welcome to artgoobi</h3>
+                        </div>
+                    </div>
+                    <div id="signup_form_section" style="display: none;">                        
                         <div class="form-group">
                             <label>First Name</label>
                             <input type="text" name="first_name" class="form-control" placeholder="Enter First Name">
@@ -132,7 +121,7 @@
                             <span class="help-block"></span>
                         </div>
                         <div class="modal-footer">
-                            <input type="hidden" id="push_signup_type" name="signup_type" value="6">
+                            <input type="hidden" id="push_signup_type" name="signup_type">
                             <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Cancel</button>
                             <button type="button" class="btn btn-primary" onclick="signup_process();">Signup</button>
                         </div>
