@@ -20,10 +20,10 @@ if (isset($featured_exhibition) && !empty($featured_exhibition)) {
         </div>   
         <!-- Portfolio Item Row -->
         <div class="row">
-            <div class="col-md-7 col-sm-7">
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-xs-12">
                 <img class="img-responsive" src="<?php echo base_url("images/exhibition/" . $featured_exhibition[0]->fetured_image_path) ?>" alt="<?php echo $featured_exhibition[0]->title; ?>" title="<?php echo $featured_exhibition[0]->title; ?>">
             </div>
-            <div class="col-md-5 col-sm-5">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <h2 class="post-title">
                     <a href="<?php echo base_url('welcome/exhibition_details/' . $featured_exhibition[0]->id); ?>"><?php echo $featured_exhibition[0]->title; ?></a>
                 </h2>

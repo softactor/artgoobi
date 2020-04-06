@@ -27,7 +27,7 @@
                     $image_path =   $path_parts."500_300image". "." . pathinfo($other->fetured_image_path, PATHINFO_EXTENSION);
 
             ?>
-            <div class="col-md-3 col-sm-6 mb-4 col-xs-12">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mb-4 col-xs-12">
                 <a href="<?php echo base_url('welcome/exhibition_details/' . $other->id); ?>">
                     <div class="center_image_container">
                         <img class="img-fluid" src="<?php echo base_url("images/exhibition/resize_images/" . $image_path); ?>" alt="<?php echo $other->title; ?>">

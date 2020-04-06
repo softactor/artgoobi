@@ -71,7 +71,7 @@
         margin-top: 5%;
     }
     .front_art_work_wrapper_small_device img{
-        margin: 1% 0;
+        margin: 5px auto;
     }
     .front_art_work_wrapper_small_device a{
         position: relative;
@@ -106,7 +106,7 @@
         display: block;
     }
     .artgoobi_search_box_container{
-        width: 310px !important;
+        width: 578px !important;
         margin: 0 !important;
     }
     .search_box_container_separation{
