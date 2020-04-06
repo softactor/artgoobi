@@ -4,6 +4,7 @@
 <!--</div>-->
         <!--<h3 class="my-4">Related Exhibitions</h3>-->
 <br/>
+<div class="clearfix"></div>
         <?php
             // get other featured Exhibition
             $data['limit']  =   4;
