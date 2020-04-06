@@ -1,12 +1,23 @@
 <?php echo $header; ?>
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xs-12 col-xl-12">
+    <div class="col-lg-12 col-xl-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="row">
+            <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                <div class="jumbotron text-center">
+                    <div class="page-header">
+                        <div class="heading_featured">
+                            <h3>Exhibition Details</h3>
+                        </div>      
+                    </div>
+                </div>                    
+            </div>
+        </div>
         <?php if (isset($post_details_data) && !empty($post_details_data)) { ?>
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 col-xl-12" id="slider">
                     <!-- Top part of the slider -->
                     <div class="row">
-                        <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2 col-xl-2" id="slider-thumbs">
+                        <div class="col-md-2 col-sm-12 col-xs-12 col-lg-2 col-xl-2" id="slider-thumbs">
                             <!-- Bottom switcher of slider -->
                             <ul class="hide-bullets">
                                 <?php
@@ -24,7 +35,7 @@
                                 ?>
                             </ul>
                         </div>
-                        <div class="col-sm-10 col-sm-12 col-xs-10 col-lg-10 col-xl-10" id="carousel-bounding-box">
+                        <div class="col-sm-12 col-xs-12 col-lg-10 col-xl-10 col-md-10" id="carousel-bounding-box">
                             <?php
                             if ($post_details_data) {
                                 ?>
