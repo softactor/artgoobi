@@ -16,12 +16,12 @@ if(isset($all_events) && !empty($all_events)){
     </div>      
 </div> 
 <div class="row">
-    <div class="col-md-12 col-sm-12 col-xl-12">
+    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="row">
             <?php
             foreach ($all_events as $event_data) {
                 ?>
-                <div class="col-md-3 col-sm-6 mb-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mb-4 col-xs-12">
                     <a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>">
                         <div class="center_image_container">
                             <img class="img-responsive"  src="<?php echo base_url("images/exhibition/" . $event_data->fetured_image_path) ?>"  alt="<?php echo $event_data->title ?>" title="<?php echo $event_data->title ?>">
