@@ -14,7 +14,10 @@
         </div>
         <div class="row">
             <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 col-xl-6">
-                <iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJaY32Qm3KWTkRuOnKfoIVZws&key=AIzaSyAf64FepFyUGZd3WFWhZzisswVx2K37RFY" allowfullscreen></iframe>
+                <!--<iframe width="100%" height="320px;" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJaY32Qm3KWTkRuOnKfoIVZws&key=AIzaSyAf64FepFyUGZd3WFWhZzisswVx2K37RFY" allowfullscreen></iframe>-->
+                <div class="map_address_image">
+                    <img class="img img-responsive" src="<?php echo base_url('images/icons/artgoobi_map_address.jpg'); ?>" />
+                </div>
             </div>
 
             <div class="col-md-6 col-sm-12 col-lg-6 col-xs-12 col-xl-6">
