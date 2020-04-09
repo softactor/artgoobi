@@ -41,11 +41,12 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                             <div class="front_art_work_wrapper">    
                                 <?php
                                 foreach ($artworks_data as $artwork) {
+                                    $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
                                     ?>
                                     <div class="artwork_image_holder">
                                         <div class="inner">
-                                            <a href="<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>">
-                                                <img src="<?php echo base_url('uploads/artwork/resize/' . $artwork->image_original); ?>" alt="img">
+                                            <a href="<?php echo $custom_url; ?>">
+                                                <img src="<?php echo base_url('uploads/artwork/resize/' . $artwork->image_original); ?>" alt="<?php echo $artwork->title; ?>" title="<?php echo $artwork->title; ?>">
                                             </a>
                                         </div>
                                     </div>
@@ -55,8 +56,9 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                         <div class="row">
                             <?php
                                 foreach ($artworks_data as $artwork) {
+                                    $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
                             ?>
-                            <a href="<?php echo base_url('welcome/artwork_details/' . $artwork->artist_id . '/' . $artwork->id); ?>" rel="noopener">
+                            <a href="<?php echo $custom_url; ?>" rel="noopener">
                                 <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
                                     <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>" alt="img" />
                                     
