@@ -28,7 +28,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
                     ?>
                 </a>
                     <?php }else{ ?>
-                <a href="<?php echo base_url() ?>welcome/user_profile/<?php echo $users_data->id; ?>"> 
+                <a href="<?php echo base_url() ?>profile/<?php echo $users_data->id; ?>"> 
                     <?php
                         if(isset($userProfileDetailsData->profile_image) && !empty($userProfileDetailsData->profile_image)){
                     ?>
