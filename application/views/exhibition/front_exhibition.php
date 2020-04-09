@@ -10,6 +10,7 @@ if (isset($featured_exhibition) && !empty($featured_exhibition)) {
     $data['where_not_in_id'] = $featured_exhibition[0]->id;
     $startdate = date('Y-m-d', strtotime($featured_exhibition[0]->start_date));
     $enddate = date('Y-m-d', strtotime($featured_exhibition[0]->end_date));
+    $details_custome_url    =   $featured_exhibition[0]->id."/".url_title($featured_exhibition[0]->title, "-", true);
     if (is_post_eligible_to_show($startdate, $enddate)) {
         ?>
         <!-- Portfolio Item Heading -->
@@ -25,7 +26,7 @@ if (isset($featured_exhibition) && !empty($featured_exhibition)) {
             </div>
             <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-xs-12">
                 <h2 class="post-title">
-                    <a href="<?php echo base_url('welcome/exhibition_details/' . $featured_exhibition[0]->id); ?>"><?php echo $featured_exhibition[0]->title; ?></a>
+                    <a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>"><?php echo $featured_exhibition[0]->title; ?></a>
                 </h2>
                 <div class="exi_date_style">
                     <?php
@@ -45,7 +46,7 @@ if (isset($featured_exhibition) && !empty($featured_exhibition)) {
                     </div>
                 <?php } ?>
                 <p class="text-left"><?php echo $featured_exhibition[0]->front_description; ?></p>
-                <div class="exi_read_more_style"><a href="<?php echo base_url('welcome/exhibition_details/' . $featured_exhibition[0]->id); ?>">Visit</a></div>
+                <div class="exi_read_more_style"><a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>">Visit</a></div>
             </div>
         </div>
         <!-- /.row -->

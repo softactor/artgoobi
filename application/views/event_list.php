@@ -18,9 +18,10 @@
                     <?php
                     if(isset($exhibitions) && !empty($exhibitions)){
                     foreach ($exhibitions as $event_data) {
+                        $details_custome_url    =   $event_data->id."/".url_title($event_data->title, "-", true);
                         ?>
                         <div class="col-md-3 col-sm-6 mb-4 col-xs-12">
-                            <a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>">
+                            <a href="<?php echo base_url('events/details/' . $details_custome_url); ?>">
                                 <div class="center_image_container">
                                     <img class="img-responsive"  src="<?php echo base_url("images/exhibition/" . $event_data->fetured_image_path) ?>"  alt="<?php echo $event_data->title ?>" title="<?php echo $event_data->title ?>">
                                 </div>
@@ -31,7 +32,7 @@
                                 ?>
                             </div>
                             <h2 class="post-title others_section">
-                                <a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>"><?php echo $event_data->title; ?></a>
+                                <a href="<?php echo base_url('events/details/' . $details_custome_url); ?>"><?php echo $event_data->title; ?></a>
                             </h2>
                             <?php
                             if (isset($event_data->event_by) && !empty($event_data->event_by)) {
@@ -53,7 +54,7 @@
                             </div>
                             <p class="hidden-xs">
                                 <?php
-                                $url = base_url("welcome/event_details/" . $event_data->id);
+                                $url = base_url("events/details/" . $event_data->id);
                                 $string = $event_data->descriptions;
                                 if (strlen($string) > 25) {
                                     $trimstring = substr($string, 0, 55);
@@ -62,7 +63,7 @@
                                 }
                                 echo $trimstring;
                                 ?>
-                            <div class="exi_read_more_style"><a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>">Visit</a></div>
+                            <div class="exi_read_more_style"><a href="<?php echo base_url('events/details/' . $details_custome_url); ?>">Visit</a></div>
 
                             </p>
                         </div> <!-- End of the column -->

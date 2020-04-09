@@ -20,9 +20,10 @@ if(isset($all_events) && !empty($all_events)){
         <div class="row">
             <?php
             foreach ($all_events as $event_data) {
+                $details_custome_url    =   $event_data->id."/".url_title($event_data->title, "-", true);
                 ?>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mb-4 col-xs-12">
-                    <a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>">
+                    <a href="<?php echo base_url('events/details/' . $details_custome_url); ?>">
                         <div class="center_image_container">
                             <img class="img-responsive"  src="<?php echo base_url("images/exhibition/" . $event_data->fetured_image_path) ?>"  alt="<?php echo $event_data->title ?>" title="<?php echo $event_data->title ?>">
                         </div>
@@ -33,7 +34,7 @@ if(isset($all_events) && !empty($all_events)){
                         ?>
                     </div>
                     <h2 class="post-title others_section">
-                        <a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>"><?php echo $event_data->title; ?></a>
+                        <a href="<?php echo base_url('events/details/' . $details_custome_url); ?>"><?php echo $event_data->title; ?></a>
                     </h2>
                     <?php
                     if (isset($event_data->event_by) && !empty($event_data->event_by)) {
@@ -53,7 +54,7 @@ if(isset($all_events) && !empty($all_events)){
                         echo ', ' . $event_data->venue_name . "<br>";
                         ?>
                     </div>
-                    <div class="exi_read_more_style"><a href="<?php echo base_url('welcome/event_details/' . $event_data->id); ?>">Visit</a></div>
+                    <div class="exi_read_more_style"><a href="<?php echo base_url('events/details/' . $details_custome_url); ?>">Visit</a></div>
                 </div> <!-- End of the column -->
             <?php } ?>
         </div>

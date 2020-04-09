@@ -24,18 +24,19 @@
         <div class="row">
             <?php
                 foreach($other_featured_exhibition as $other){
+                    $details_custome_url    =   $other->id."/".url_title($other->title, "-", true);
                     $path_parts =   pathinfo($other->fetured_image_path, PATHINFO_FILENAME);
                     $image_path =   $path_parts."500_300image". "." . pathinfo($other->fetured_image_path, PATHINFO_EXTENSION);
 
             ?>
             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 mb-4 col-xs-12">
-                <a href="<?php echo base_url('welcome/exhibition_details/' . $other->id); ?>">
+                <a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>">
                     <div class="center_image_container">
                         <img class="img-fluid" src="<?php echo base_url("images/exhibition/resize_images/" . $image_path); ?>" alt="<?php echo $other->title; ?>">
                     </div>
                 </a>
                 <h2 class="post-title others_section">
-                    <a href="<?php echo base_url('welcome/exhibition_details/' . $other->id); ?>"><?php echo $other->title; ?></a>
+                    <a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>"><?php echo $other->title; ?></a>
                 </h2>
                 <?php
                     if (isset($other->event_by) && !empty($other->event_by)) {
@@ -50,7 +51,7 @@
                         echo ', '.$other->venue_name."<br>"; 
                     ?>
                 </div>
-                <div class="exi_read_more_style"><a href="<?php echo base_url('welcome/exhibition_details/' . $other->id); ?>">Visit</a></div>
+                <div class="exi_read_more_style"><a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>">Visit</a></div>
             </div> <!-- End of the column -->
             <?php } ?>
 
