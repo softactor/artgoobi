@@ -554,6 +554,7 @@ class Welcome extends CI_Controller {
         $get_data = [];
         $get_data ['table'] = "artwork_info";
         $get_data ['where']['artist_id= '] = $user_logged_in; // Exclude Super Admin;
+        $get_data ['where']['status= '] = 1; // Exclude Super Admin;
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'];
         $data['artwork_data'] = isset($data['all_data']['data'][0])?$data['all_data']['data'][0]:'';
@@ -1796,7 +1797,7 @@ class Welcome extends CI_Controller {
 //        $get_data ['where']['artist_id= '] = $artist_id; // Exclude Super Admin;
 //        $get_data ['where']['id!= '] = $artwork_id; // Exclude Super Admin;
 //        $data['all_data'] = $this->common_model->common_table_data_read($get_data);
-        $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 AND artist_id=$artist_id AND id!=$artwork_id ORDER BY create_time DESC";
+        $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 AND artist_id=$artist_id ORDER BY create_time DESC";
         $query                          = $this->db->query($gallery_sql);
         $data['galleries']              = $query->result();
 //        $data['galleries'] = $data['all_data']['data'];
