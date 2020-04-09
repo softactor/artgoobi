@@ -126,6 +126,9 @@
         width: 100%;
         margin: 2px 0;
     }
+    sweet-alert{
+        margin-top: -318px!important;
+    }
 }
 
 /* 
@@ -217,5 +220,8 @@
         float: left;
         width: 100%;
         margin: 2px 0;
+    }
+    sweet-alert{
+        margin-top: -318px!important;
     }
 }
