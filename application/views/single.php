@@ -4,7 +4,7 @@
         <?php $this->load->view('artworks/art_gallery'); ?> 
         <div class="page-header view-more-style">
         <div class="heading_featured">
-            <h4 class="text-center"><a href="<?php echo base_url(); ?>welcome/gallery_list">Explore Gallery</a></h4>
+            <h4 class="text-center"><a href="<?php echo base_url(); ?>gallery">Explore Gallery</a></h4>
         </div>
     </div>
     </div>
