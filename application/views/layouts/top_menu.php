@@ -65,7 +65,7 @@
                             ?>
                         <li style="margin-top: -2px;">
                             <div class="profile_left_panel_desktop_view">
-                                <a href="<?php echo base_url() ?>welcome/user_profile">
+                                <a href="<?php echo base_url() ?>profile">
                                     <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
                                     <span style="font-weight: bold;"><?php echo $this->session->userdata('user_logged_name'); ?></span>
                                 </a>
