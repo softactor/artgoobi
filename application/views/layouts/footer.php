@@ -47,7 +47,6 @@
 <script src="<?php echo base_url(); ?>tinymce/config.js"></script>
 <script src="<?php echo base_url(); ?>js/perfect-scrollbar.min.js"></script>
 <script src="<?php echo base_url(); ?>js/select2.min.js"></script>
-<script src="<?php echo base_url(); ?>js/jquery.lazy.min.js"></script>
 <script src="<?php echo base_url(); ?>js/signup.js"></script>
 <script src="<?php echo base_url(); ?>js/artwork_search.js"></script>
 <script src="<?php echo base_url(); ?>js/advertise_slider.js"></script>

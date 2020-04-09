@@ -21,12 +21,12 @@
                     <div id="navbar" class="navbar-collapse collapse">
                         <ul id="left_navbar_cusom_width" class="nav navbar-nav">
                             <li><a href="<?php echo base_url() ?>">Home</a></li>
-                            <li><a href="<?php echo base_url('welcome/about_us'); ?>">About</a></li>
-                            <li><a href="<?php echo base_url('welcome/exhibition_list'); ?>">Exhibition</a></li>
-                            <li><a href="<?php echo base_url('welcome/event_list'); ?>">Event</a></li>
-                            <li><a href="<?php echo base_url('welcome/gallery_list'); ?>">Artgoobi Gallery</a></li>
-                            <li><a href="<?php echo base_url('welcome/faq'); ?>">FAQ</a></li>
-                            <li><a href="<?php echo base_url('welcome/contact_us'); ?>">Contact Us</a></li>
+                            <li><a href="<?php echo base_url('about_us'); ?>">About</a></li>
+                            <li><a href="<?php echo base_url('exhibitions'); ?>">Exhibition</a></li>
+                            <li><a href="<?php echo base_url('events'); ?>">Event</a></li>
+                            <li><a href="<?php echo base_url('gallery'); ?>">Artgoobi Gallery</a></li>
+                            <li><a href="<?php echo base_url('faq'); ?>">FAQ</a></li>
+                            <li><a href="<?php echo base_url('contact_us'); ?>">Contact Us</a></li>
                         </ul>                        
                     </div><!--/.nav-collapse -->
                 </div>
