@@ -12,6 +12,9 @@ body{
 .container{
     background-color: #f8f8f8;
 }*/
+.active_top_link{
+    font-weight: bold;
+}
 .artwork_signup_option{
     display: none;
 }

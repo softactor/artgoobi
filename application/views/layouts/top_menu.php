@@ -19,14 +19,19 @@
                         </a>
                     </div>
                     <div id="navbar" class="navbar-collapse collapse">
+                        <?php
+                            $url = $_SERVER['REQUEST_URI'];
+                            $parts = parse_url($url);
+                            $urlname = basename($parts['path']);
+                        ?>
                         <ul id="left_navbar_cusom_width" class="nav navbar-nav">
-                            <li><a href="<?php echo base_url() ?>">Home</a></li>
-                            <li><a href="<?php echo base_url('about_us'); ?>">About</a></li>
-                            <li><a href="<?php echo base_url('exhibitions'); ?>">Exhibition</a></li>
-                            <li><a href="<?php echo base_url('events'); ?>">Event</a></li>
-                            <li><a href="<?php echo base_url('gallery'); ?>">Artgoobi Gallery</a></li>
-                            <li><a href="<?php echo base_url('faq'); ?>">FAQ</a></li>
-                            <li><a href="<?php echo base_url('contact_us'); ?>">Contact Us</a></li>
+                            <li <?php if (empty($urlname)) { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url() ?>">Home</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "about_us") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('about_us'); ?>">About</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "exhibitions") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('exhibitions'); ?>">Exhibition</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "events") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('events'); ?>">Event</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "gallery") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('gallery'); ?>">Artgoobi Gallery</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "faq") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('faq'); ?>">FAQ</a></li>
+                            <li <?php if (isset($urlname) &&  $urlname == "contact_us") { echo "class='active_top_link'"; } ?>><a href="<?php echo base_url('contact_us'); ?>">Contact Us</a></li>
                         </ul>                        
                     </div><!--/.nav-collapse -->
                 </div>
