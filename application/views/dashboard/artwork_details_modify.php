@@ -9,12 +9,12 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>
-            Event
+            Artwork Details
             <small>Control panel</small>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Event Panel</li>
+            <li class="active">Artwork Details</li>
         </ol>
     </section>
 
@@ -23,7 +23,7 @@
         <!-- Small boxes (Stat box) -->
         <div class="row">
             <div class="col-xs-12">
-                <div class="box">
+                <div class="box box-primary">
                     <div class="box-header">
                         <!--all flash message show view-->
                         <?php $this->load->view ('dashboard/message_view_page');  ?>
@@ -32,7 +32,7 @@
                         $check_param['sub_menu'] = 'add';
                         if (has_main_menu_access($check_param)) {
                             ?>
-                            <div class="box-tools pull-right">
+                            <div class="pull-right">
                                 <?php 
                                     $redirectLink   = base_url().'admin/dashboard/profile_artwork_list/'.$artwork_data->artist_id;
                                 ?>
@@ -43,7 +43,7 @@
                         <?php } ?>
                     </div>
                     <!-- /.box-header -->
-                    <div class="box-body table-responsive no-padding">
+                    <div class="box-body">
                         <!-- form start -->
                         <form class="form-horizontal" method="post" enctype="multipart/form-data" action="<?php echo base_url('welcome/artist_artwork_modify_process'); ?>">
                             <div class="row">
