@@ -90,13 +90,20 @@ if (isset($users_info->status) && $users_info->status == 1) {
                                 <?php
                                 foreach ($galleries as $artwork) {
                                     $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
+                                    $artwork_url     =   'uploads/artwork/resize/' . $artwork->image_original;
                                     if ($artwork_data->id != $artwork->id) {
                                         ?>
                                         <div class="artwork_image_holder">
                                             <div class="inner">
+                                                <?php
+                                                    if(file_exists($artwork_url)){
+                                                ?>
                                                 <a href="<?php echo $custom_url; ?>">
                                                     <img src="<?php echo base_url('uploads/artwork/resize/' . $artwork->image_original); ?>" alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>">
                                                 </a>
+                                                    <?php }else{ ?>
+                                                        <img src="<?php echo base_url('images/icons/image_not_found.png'); ?>" alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>">
+                                                    <?php } ?>
                                             </div>
                                         </div>
                                     <?php
