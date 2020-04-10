@@ -17,7 +17,7 @@
             <?php
         }
         ?>
-        <title>Artgoobi</title>
+        <title><?php echo (isset($title) && !empty($title) ? $title : "Artgoobi") ?></title>
 
         <!-- Bootstrap core CSS -->
         <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">

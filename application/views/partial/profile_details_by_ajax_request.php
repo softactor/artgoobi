@@ -12,7 +12,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
                 <?php
                 if ($profiler) {
                     ?>
-                    <a href="<?php echo base_url() ?>welcome/user_profile_image_upload"> 
+                    <a href="<?php echo base_url() ?>profile/image_upload"> 
                         <?php
                         if (isset($userProfileDetailsData->profile_image) && !empty($userProfileDetailsData->profile_image)) {
                             ?>
@@ -26,7 +26,7 @@ if (isset($users_info->status) && $users_info->status == 1) {
                         ?>
                     </a>
                 <?php } else { ?>
-                    <a href="<?php echo base_url() ?>welcome/user_profile/<?php echo $users_data->id; ?>"> 
+                    <a href="<?php echo base_url() ?>profile/<?php echo $users_data->id; ?>"> 
                         <?php
                         if (isset($userProfileDetailsData->profile_image) && !empty($userProfileDetailsData->profile_image)) {
                             ?>
@@ -57,18 +57,18 @@ if (isset($users_info->status) && $users_info->status == 1) {
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url() ?>welcome/user_event_list">
+                                    <a href="<?php echo base_url() ?>profile/events">
                                         <img src="<?php echo base_url('images/icons/event_edit.png'); ?>">
                                         Manage Event
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url() ?>welcome/artist_image_upload">
+                                    <a href="<?php echo base_url() ?>profile/artwork_upload">
                                         <img src="<?php echo base_url('images/icons/artwork_edit.png'); ?>">Upload Artwork
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="<?php echo base_url() ?>welcome/user_profile">
+                                    <a href="<?php echo base_url() ?>profile">
                                         <img src="<?php echo base_url('images/icons/artworks.png'); ?>"> Artworks
                                     </a>
                                 </li>
