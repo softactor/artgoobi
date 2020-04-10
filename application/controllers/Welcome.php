@@ -2290,7 +2290,6 @@ class Welcome extends CI_Controller {
         $get_data ['where']['post_type'] = 1;
         $artwork_data = $this->common_model->common_table_data_read($get_data);
         $data['exhibitions'] =   $artwork_data['data'];
-        $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
         $data['header'] = $this->load->view('layouts/header', $data, true);
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
