@@ -119,14 +119,21 @@ if (isset($users_info->status) && $users_info->status == 1) {
                                 <div class="row">
                                     <?php
                                     foreach ($galleries as $artwork) {
+                                        $artwork_url     =   'uploads/artwork/resize/' . $artwork->image_original;
                                         $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
+                                        if(file_exists($artwork_url)){                                        
                                         ?>
                                         <a href="<?php echo $custom_url; ?>" rel="noopener">
                                             <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
                                                 <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>"  alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>" />
                                             </div>
                                         </a>
-    <?php } ?>
+                                    <?php }else{ ?>
+                                        <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
+                                                <img class="img img-responsive" src="<?php echo base_url('images/icons/image_not_found.png'); ?>"  alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>" />
+                                        </div>
+                                    <?php } ?>
+                                    <?php } ?>
                                 </div>
                             </div>
 <?php } ?>
