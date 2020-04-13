@@ -6,7 +6,7 @@
                 <div class="jumbotron text-center">
                     <div class="page-header">
                         <div class="heading_featured">
-                            <h3>Exibitions Now</h3>
+                            <h3>Exhibitions Now</h3>
                         </div>      
                     </div>
                 </div>                    
