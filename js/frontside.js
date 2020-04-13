@@ -1,4 +1,7 @@
 jQuery(document).ready(function ($) {
+    lightbox.option({
+      'showImageNumberLabel': false
+    })
     $("#artist_id").select2({
         width: '100%'
     });
