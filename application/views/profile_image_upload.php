@@ -17,7 +17,7 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                     <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                         <div class="jumbotron text-center">
                             <h1 class="service_title">
-                                <?php echo "Artwork Update" ?>
+                                <?php echo "Artwork Upload" ?>
                             </h1>
                         </div>                    
                     </div>
@@ -165,5 +165,6 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
             </div>
         </div>
     </div>
+</div>
     <!-- Content Content Area End -->
 <?php echo $footer; ?>        

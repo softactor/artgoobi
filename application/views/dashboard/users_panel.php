@@ -45,6 +45,7 @@ $check_param['meny_type'] = 2;
                             <thead>
                                 <tr>
                                     <th>SL No.</th>
+                                    <th>Name</th>
                                     <th>Email</th>
                                     <th>Type</th>
                                     <th>Status</th>
@@ -59,6 +60,7 @@ $check_param['meny_type'] = 2;
                                         ?>
                                         <tr id="user_row_<?php echo $data->id; ?>">
                                             <td><?php echo $sl; ?></td>
+                                            <td><?php echo $data->name; ?></td>
                                             <td><?php echo $data->user_email; ?></td>
                                             <td>
                                                 <?php
