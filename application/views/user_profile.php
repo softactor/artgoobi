@@ -49,7 +49,7 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                                 <div class="alert alert-warning text-center" role="alert">
-                                    Pending Artwork For Admin Approving!
+                                    Pending Artwork For Admin Approval!
                               </div>                   
                             </div>
                         </div>
