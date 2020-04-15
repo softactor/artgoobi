@@ -557,6 +557,7 @@ function select_data_by_advance_search($searchParam){
     if(isset($searchParam['year_end']) && !empty($searchParam['year_end'])){
         $query = $CI->db->where('year <= ',$searchParam['year_end']);
     }
+    $query = $CI->db->where('status',1);
     $searcheData = $CI->db->get('artwork_info')->result();
     if(isset($searcheData) && !empty($searcheData)){
         return $searcheData;

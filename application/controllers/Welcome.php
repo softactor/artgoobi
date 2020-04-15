@@ -550,6 +550,7 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['users_info'] = $data['all_data']['data'][0];
         $data['users_data'] = $data['all_data']['data'][0];
+        
         // Read All artwork data
         $get_data = [];
         $get_data ['table'] = "artwork_info";
@@ -558,6 +559,18 @@ class Welcome extends CI_Controller {
         $data['all_data'] = $this->common_model->common_table_data_read($get_data);
         $data['artworks_data'] = $data['all_data']['data'];
         $data['artwork_data'] = isset($data['all_data']['data'][0])?$data['all_data']['data'][0]:'';
+        
+        // Peding artwork data
+        $get_data = [];
+        $get_data ['table'] = "artwork_info";
+        $get_data ['where']['artist_id= '] = $user_logged_in; // Exclude Super Admin;
+        $get_data ['where']['status= '] = 0; // Exclude Super Admin;
+        $data['pending_artwork_response'] = $this->common_model->common_table_data_read($get_data);
+        $data['pending_artwork_data'] = (isset($data['pending_artwork_response']['data'][0])?$data['pending_artwork_response']['data']:'');
+        
+        $data['artworks_data'] = $data['all_data']['data'];
+        $data['artwork_data'] = isset($data['all_data']['data'][0])?$data['all_data']['data'][0]:'';
+        
         $data['title'] = "Artgoobi | User Profile";
         $data['active_menu'] = "gallery";
         

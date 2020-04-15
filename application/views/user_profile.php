@@ -35,56 +35,37 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                                 </div>                    
                             </div>
                         </div>
-                        <?php
-                        if (isset($artworks_data) && !empty($artworks_data)) {
-                            ?>
-                            <div class="front_art_work_wrapper">    
-                                <?php
-                                foreach ($artworks_data as $artwork) {
-                                    $artwork_url    =   'uploads/artwork/resize/' . $artwork->image_original;
-                                    $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
-                                    ?>
-                                    <div class="artwork_image_holder">
-                                        <div class="inner">
-                                            <?php
-                                                    if(file_exists($artwork_url)){
-                                                ?>
-                                            <a href="<?php echo $custom_url; ?>">
-                                                <img src="<?php echo base_url('uploads/artwork/resize/' . $artwork->image_original); ?>" alt="<?php echo $artwork->title; ?>" title="<?php echo $artwork->title; ?>">
-                                            </a>
-                                            <?php }else{ ?>
-                                                        <img src="<?php echo base_url('images/icons/image_not_found.png'); ?>" alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>">
-                                                    <?php } ?>
-                                        </div>
-                                    </div>
-                            <?php } ?>
-                            </div>
-                        <div class="front_art_work_wrapper_small_device">
-                        <div class="row">
-                            <?php
-                                foreach ($artworks_data as $artwork) {
-                                    $artwork_url     =   'uploads/artwork/resize/' . $artwork->image_original;
-                                    $custom_url     =   base_url('profile/artwork_details/' . $artwork->artist_id . '/' . $artwork->id."/".url_title($artwork->title, "-", true));
-                                    if(file_exists($artwork_url)){                                        
-                                        ?>
-                            <a href="<?php echo $custom_url; ?>" rel="noopener">
-                                <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
-                                    <img class="img img-responsive" src="<?php echo base_url('uploads/artwork/' . $artwork->image_original); ?>" alt="img" />
-                                    
-                                </div>
-                            </a>
-                            <?php }else{ ?>
-                                        <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
-                                                <img class="img img-responsive" src="<?php echo base_url('images/icons/image_not_found.png'); ?>"  alt="<?php echo $artwork->title ?>" title="<?php echo $artwork->title ?>" />
-                                        </div>
-                                    <?php } ?>
-                            <?php } ?>
-                        </div>
-                    </div>
-                    <div class="clearfix"></div>
-<?php } ?>
+                        <!--
+                        * the following view file is responsible for 
+                        * common artwork show.
+                        * Need variable name as " $artworks_data "                        
+                        -->
+                        <?php $this->view('partial/artwork_info/general_artwork_show_view'); ?>                        
                     </div>
                 </div>
+                <?php if($profiler && (isset($pending_artwork_data) && !empty($pending_artwork_data))){ ?>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xl-12 col-lg-12 clearfix">
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+                                <div class="alert alert-warning text-center" role="alert">
+                                    Pending Artwork For Admin Approving!
+                              </div>                   
+                            </div>
+                        </div>
+                        <!--This is a warning alert—check it out!
+                              </div>
+                        * the following view file is responsible for 
+                        * common artwork show.
+                        * Need variable name as " $artworks_data "                        
+                        -->
+                        <?php 
+                        $data['artworks_data']  =   $pending_artwork_data;
+                        $this->view('partial/artwork_info/general_artwork_show_view', $data); 
+                        ?>                        
+                    </div>
+                </div>
+                <?php } ?>
             </div>  
         </div>
     </div>
