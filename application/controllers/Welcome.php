@@ -1030,7 +1030,7 @@ class Welcome extends CI_Controller {
                 }                
             }
         }
-        $this->session->set_flashdata('success_message','Artwork have been successfully uploaded.');
+        $this->session->set_flashdata('success_message','Artwork have been successfully uploaded. Now, it is pending for admin approval. You can see the pending artwork in your profile');
         $redirect_url = base_url() . "welcome/artist_image_upload";
         redirect($redirect_url);
         }
