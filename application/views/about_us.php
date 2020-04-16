@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-                <p>
+                <p class="common_paragraph">
                     Artgoobi, a concern of ‘180 Degrees’, defines itself as a online platform with an express goal of empowering artists with efficacious tools to connect
                     with the global art scene and to promote art as social business. In the same vein it makes it a prerogative to arouse the slumbering art market into being a socially
                     supportive and sustainable force to leverage art in a way that helps nourish and manifest the potentials of change and growth that points
