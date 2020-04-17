@@ -801,7 +801,6 @@ class Welcome extends CI_Controller {
     }
 
     public function artist_image_upload_process() {
-        
         $all    =   $this->input->post();
         // get value for not for sale:
         $nfs    =   $this->input->post('not_for_sale');
@@ -879,7 +878,7 @@ class Welcome extends CI_Controller {
 
         // Image upload config area:
         $config['upload_path'] = './uploads/artwork/';
-        $config['allowed_types'] = 'gif|jpg|png';
+        $config['allowed_types'] = 'gif|jpg|png|jpeg';
         $config['file_name'] = $newName;
         $config['maintain_ratio'] = TRUE;
 
@@ -888,9 +887,8 @@ class Welcome extends CI_Controller {
 
         // image upload method
         if (!$this->upload->do_upload('userfile')) {
-            $error = array('error' => $this->upload->display_errors());
-            //$error  =   validation_errors();
-            $this->session->set_flashdata('error_message','Failed to upload artwork. image upload problem');
+            $error = $this->upload->display_errors();
+            $this->session->set_flashdata('error_message','Failed to upload artwork '.$error);
             // Authentication Check
             $user_logged_in = profile_authentication_check();
             // Read All User Data
@@ -1029,8 +1027,8 @@ class Welcome extends CI_Controller {
                     $this->db->insert_batch('artwork_attrib', $artwork_attrib);
                 }                
             }
-        }
         $this->session->set_flashdata('success_message','Artwork have been successfully uploaded. Now, it is pending for admin approval. You can see the pending artwork in your profile');
+        }
         $redirect_url = base_url() . "welcome/artist_image_upload";
         redirect($redirect_url);
         }
