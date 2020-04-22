@@ -678,3 +678,10 @@ function send_email($emailParam) {
             'message'       =>  $message,
         ];
     }
+    function is_profile_name_valid($profile_name){
+	if(preg_match("/^[a-zA-Z0-9_]+((\.(-\.)*-?|-(\.-)*\.?)[a-zA-Z0-9_]+)*$/",$profile_name)){
+            return true;
+	}else{
+            return false;
+	}
+    }

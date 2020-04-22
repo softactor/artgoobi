@@ -23,6 +23,12 @@ body{
 #artwork_signup_option_artist{
     display: block;
 }
+.profile_link_hints{
+    font-style: italic;
+    font-weight: bold;
+    color: darkslateblue;
+    font-size: 14.5px;
+}
 .jumbotron{
         padding: 5px !important;
         margin-bottom: 5px !important;

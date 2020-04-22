@@ -63,8 +63,9 @@
                             <span class="help-block"></span>
                         </div>
                         <div class="form-group">
-                            <label>Profile Link Name</label><span> like artgoobi.com/your.profile.link.name</span>
-                            <input onkeyup="check_profile_name_availability(this.value);" type="text" id="profile_link_name" name="profile_link_name" class="form-control" placeholder="Enter Profile Link name">
+                            <label>Profile Link Name</label><br>
+                            <span class="profile_link_hints"> ( like firstname.lastname.name <span style="color:black;">or</span> firstname_lastname <span style="color:black;">or</span> firstname.lastnamename87 etc. <br>without space and special characters )</span>
+                            <input autocomplete="off" onkeyup="check_profile_name_availability(this.value);" type="text" id="profile_link_name" name="profile_link_name" class="form-control" placeholder="Enter Profile Link name">
                             <span class="help-block"></span>
                             <span id="profile_link_name_status"></span>
                         </div>

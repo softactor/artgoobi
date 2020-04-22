@@ -323,11 +323,11 @@ function check_profile_name_availability(profile_name){
         dataType:'json',
         data:'profile_name='+profile_name,
         success: function(response) {
-            if(response.isavailable){
-                $("#profile_link_name_status").html("Profile link name is available.");
+            if(response.status == "success"){
+                $("#profile_link_name_status").html(response.message);
             }else{
                 $("#profile_link_name").val("")
-                swal("Unavailable", "Please type different Profile Link Name", "error");
+                swal("Error!", response.message, "error");
             }
         }
     });
