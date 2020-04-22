@@ -2982,8 +2982,8 @@ class Welcome extends CI_Controller {
                 $message    =   "<div class='alert alert-warning'>Your profile link name is not available!</div>";
             }
         }else{
-            $status     =   "success";
-            $message    =   "<div class='alert alert-warning'>Your given profile link name was not valid. Please try another.</div>";
+            $status     =   "error";
+            $message    =   "Your given profile link name was not valid. Please try another.";
         }
         $feedback = [
             'status'  => $status,
