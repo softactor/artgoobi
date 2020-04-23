@@ -2881,11 +2881,11 @@ class Welcome extends CI_Controller {
                 $message    =   "<div class='alert alert-success'>Your profile link name is available</div>";
             }else{
                 $status     =   "error";
-                $message    =   "<div class='alert alert-warning'>Your profile link name ".$profile_name." is not available!</div>";
+                $message    =   "<div class='alert alert-warning'>Your profile link name <b>".$profile_name."</b> is not available!</div>";
             }
         }else{
             $status     =   "error";
-            $message    =   "<div class='alert alert-warning'>Your given profile link name ".$profile_name." was not valid. Please try another.</div>";
+            $message    =   "<div class='alert alert-warning'>Your given profile link name <b>".$profile_name."</b> was not valid. Please try another.</div>";
         }
         $feedback = [
             'status'  => $status,
