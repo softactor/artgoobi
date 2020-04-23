@@ -328,7 +328,7 @@ function check_profile_name_availability(profile_name){
                 $("#profile_link_name_status").html(response.message);
             }else{
                 $("#profile_link_name_id").val("")
-                swal("Error!", response.message, "error");
+                $("#profile_link_name_status").html(response.message);
             }
         }
     });
