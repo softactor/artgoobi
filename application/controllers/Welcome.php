@@ -124,7 +124,7 @@ class Welcome extends CI_Controller {
             $birth_string_year  = $this->input->post('birth_year');
             $birth_string       = $birth_string_month.' '.$birth_string_date.' '.$birth_string_year;
             $usersdet_data = [
-                'profile_link_name' => $this->input->post('profile_link_name'),
+                'profile_link_name' => trim($this->input->post('profile_link_name')),
                 'first_name'        => $this->input->post('first_name'),
                 'last_name'         => $this->input->post('last_name'),
                 'phone_no'          => $this->input->post('phone'),
@@ -2881,7 +2881,7 @@ class Welcome extends CI_Controller {
                 $message    =   "<div class='alert alert-success'>Your profile link name is available</div>";
             }else{
                 $status     =   "error";
-                $message    =   "<div class='alert alert-warning'>Your profile link name is not available!</div>";
+                $message    =   "Your profile link name is not available!";
             }
         }else{
             $status     =   "error";
