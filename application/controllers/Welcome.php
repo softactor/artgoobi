@@ -2870,15 +2870,16 @@ class Welcome extends CI_Controller {
     
     public function check_profile_name_availability(){
         $is_available   =   false;
-        $profile_name   =   $this->input->post('profile_name');
+        $profile_name   =   trim($this->input->post('profile_name'));
         $is_profile_name_valid    =   is_profile_name_valid($profile_name);
         if($is_profile_name_valid){
             $dupData['table']                   =   "users_details";
             $dupData['where']['profile_link_name']      =   trim($profile_name);
             $isDuplicate    =   check_duplicate_data($dupData, 'created_at');
             if(!$isDuplicate){
+                $profile_link_details   =   base_url().$profile_name;
                 $status     =   "success";
-                $message    =   "<div class='alert alert-success'>Your profile link name is available</div>";
+                $message    =   "<div class='alert alert-success'>Great!. Your profile link will be ".$profile_link_details."</div>";
             }else{
                 $status     =   "error";
                 $message    =   "<div class='alert alert-warning'>Your profile link name <b>".$profile_name."</b> is not available!</div>";
