@@ -2879,7 +2879,7 @@ class Welcome extends CI_Controller {
             if(!$isDuplicate){
                 $profile_link_details   =   base_url().$profile_name;
                 $status     =   "success";
-                $message    =   "<div class='alert alert-success'>Great!. Your profile link will be ".$profile_link_details."</div>";
+                $message    =   "<div class='alert alert-success'>Great!. Your profile link will be <b>".$profile_link_details."</b></div>";
             }else{
                 $status     =   "error";
                 $message    =   "<div class='alert alert-warning'>Your profile link name <b>".$profile_name."</b> is not available!</div>";
