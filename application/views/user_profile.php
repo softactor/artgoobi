@@ -3,7 +3,7 @@ echo $header;
 $profiler = false;
 $user_logged_in = $this->session->userdata('user_logged_id');
 $profile_link_name = $this->session->userdata('profile_link_name');
-$profileLink       = (isset($profile_link_name) && !empty($profile_link_name) ? $profile_link_name : $userProfileDetailsData->profile_link_name);
+$profileLink       = (isset($userProfileDetailsData->profile_link_name) && !empty($userProfileDetailsData->profile_link_name) ? $userProfileDetailsData->profile_link_name : "");
 if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $users_data->id) {
     $profiler = true;
 }
