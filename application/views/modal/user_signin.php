@@ -52,15 +52,21 @@
                             </div>
                         </div>
                     </div>
-                        <div class="form-group">
-                            <label>First Name</label>
-                            <input type="text" name="first_name" class="form-control" placeholder="Enter First Name">
-                            <span class="help-block"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Last Name</label>
-                            <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name">
-                            <span class="help-block"></span>
+                        <div class="row">
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>First Name</label>
+                                    <input type="text" name="first_name" class="form-control" placeholder="Enter First Name">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Last Name</label>
+                                    <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Profile Link Name</label><br>
@@ -93,44 +99,62 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email</label>
-                            <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-                            <span class="help-block"></span>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone</label>
-                            <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
-                            <span class="help-block"></span>
+                        <div class="row">
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email</label>
+                                    <input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" class="form-control" placeholder="Enter Phone">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
                         <!-- Country Drop Down -->
-                        <div class="form-group">
-                            <label>Country</label>
-                            <select name="country_id" class="form-control">
-                                <option value="">Please Select</option>
-                                <?php
-                                $countries = get_all_data_by_table("country");
-                                foreach ($countries as $country) {
-                                    ?>
-                                    <option value="<?php echo $country->id; ?>"><?php echo $country->name; ?></option>
-                                <?php } ?>
-                            </select>
-                            <span class="help-block"></span>
+                        <div class="row">
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Country</label>
+                                    <select name="country_id" class="form-control">
+                                        <option value="">Please Select</option>
+                                        <?php
+                                        $countries = get_all_data_by_table("country");
+                                        foreach ($countries as $country) {
+                                            ?>
+                                            <option value="<?php echo $country->id; ?>"><?php echo $country->name; ?></option>
+                                        <?php } ?>
+                                    </select>
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label>Zip Code</label>
+                                    <input type="text" name="zip_code" class="form-control" placeholder="Enter Zip Code">
+                                    <span class="help-block"></span>
+                                </div>                                        
+                            </div>                                        
                         </div>
-                        <div class="form-group">
-                            <label>Zip Code</label>
-                            <input type="text" name="zip_code" class="form-control" placeholder="Enter Zip Code">
-                            <span class="help-block"></span>
-                        </div>                                        
-                        <div class="form-group">
-                            <label for="exampleInputPassword">Password</label>
-                            <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password">
-                            <span class="help-block"></span>
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Re Type Password</label>
-                            <input type="password" name="re_password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                            <span class="help-block"></span>
+                        <div class="row">
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword">Password</label>
+                                    <input type="password" name="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-xl-6 col-md-6 col-sm-12 col-xs-12">
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Re Type Password</label>
+                                    <input type="password" name="re_password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    <span class="help-block"></span>
+                                </div>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <input type="hidden" id="push_signup_type" name="signup_type" value="6">
