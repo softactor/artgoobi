@@ -32,8 +32,12 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                             <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                                 <div class="jumbotron text-center">
                                     <h1 class="service_title">
-                                        <?php echo $users_info->name." Artwork<br>" ?>
+                                        <?php 
+                                            echo $users_info->name." Artwork<br>";
+                                            if(isset($profileLink) && !empty($profileLink)){
+                                        ?>
                                         <span style="text-transform: lowercase; font-size: 12px; color: #6c8cc7;" class="profile_link_hints"><?php echo base_url().$profileLink; ?></span>
+                                        <?php } ?>
                                     </h1>
                                 </div>                    
                             </div>
