@@ -309,6 +309,7 @@ class Dashboard extends CI_Controller {
             ut.name as user_type_name,
             ud.first_name,
             ud.last_name,            
+            ud.profile_link_name,            
             ud.phone_no';        
         //Join users_details
         $join['join']['table'][] = 'users_details ud';
@@ -895,16 +896,21 @@ class Dashboard extends CI_Controller {
             $logged['id'] = $user_info['data'][0]->id;
             $logged['user_email'] = $user_info['data'][0]->user_email;
             $logged['user_type'] = $user_info['data'][0]->user_type;
-
+            
+            $get_data           = [];
+            $get_data ['table'] = "users_details";
+            $get_data ['where']['user_id'] = $user_info['data'][0]->id;
+            $users_details = $this->common_model->common_table_data_read($get_data, null, true);
+            
             $logged_data = array(
                 'user_logged_id' => $user_info['data'][0]->id,
                 'user_logged_name' => $user_info['data'][0]->name,
                 'user_logged_type' => $user_info['data'][0]->user_type,
                 'user_logged_type_name' => get_user_type_name($this->input->post('user_type')),
                 'user_logged_email' => $user_info['data'][0]->user_email,
+                'profile_link_name' => $users_details['data']->profile_link_name,
                 'user_logged_in_status' => TRUE
             );
-
             $this->session->set_userdata($logged_data);
             $feedback_data = [
                 'status'    => "success",

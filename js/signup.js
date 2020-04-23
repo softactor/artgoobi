@@ -133,7 +133,8 @@ function confirm_userlogged_out(){
             {
                 $('#modal_user_logout').modal('hide');
                 setTimeout(function () {
-                    location.reload(true);
+                    var redirect_url =  base_url_addr;
+                    window.location = redirect_url;
                 }, 2000);
             }
         }

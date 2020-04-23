@@ -22,6 +22,7 @@
                   <th>Email</th>
                   <th>Phone</th>
                   <th>Status</th>
+                  <th>Profile Link</th>
                   <th>Action</th>
                 </tr>
                 </thead>
@@ -33,7 +34,7 @@
                     <tr>
                         <td><?php echo $d->first_name." ".$d->last_name; ?></td>
                         <td><?php echo $d->user_email; ?></td>
-                        <td><?php echo $d->phone_no; ?></td>
+                        <td><?php echo $d->phone_no; ?></td>                        
                         <td>
                             <?php
                                 switch($d->status){
@@ -51,6 +52,7 @@
                                 }
                             ?>
                         </td>
+                        <td><?php echo $d->profile_link_name; ?></td>
                         <td>
                             <!--<a href="#update_signup" data-toggle="modal" onclick="getProfileInfoById(<?php echo $d->user_id; ?>);">Edit</a> |--> 
                             <!--<a href="#">Delete</a> |-->

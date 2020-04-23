@@ -12,12 +12,13 @@
                         <div class="menu-footer-menu-container">
                             <ul id="menu-footer-menu" class="menu">
                                 <li id="menu-item-4187" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-4187"><a href="<?php echo base_url() ?>">Home</a></li>
-                                <li id="menu-item-4188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4188"><a href="<?php echo base_url('welcome/about_us'); ?>">About</a></li>
-                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/exhibition_list'); ?>">Exhibition</a></li>
-                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/event_list'); ?>">Event</a></li>
-                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/gallery_list'); ?>">Artgoobi Gallery</a></li>
-                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('welcome/terms_and_conditions'); ?>">Terms & Conditions</a></li>
-                                <li id="menu-item-4201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4201"><a href="<?php echo base_url('welcome/contact_us'); ?>">Contact Us</a></li>
+                                <li id="menu-item-4188" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4188"><a href="<?php echo base_url('about_us'); ?>">About</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('exhibitions'); ?>">Exhibition</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('events'); ?>">Event</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('gallery'); ?>">Artgoobi Gallery</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('faq'); ?>">FAQ</a></li>
+                                <li id="menu-item-4189" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4189"><a href="<?php echo base_url('terms_and_conditions'); ?>">Terms & Conditions</a></li>
+                                <li id="menu-item-4201" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4201"><a href="<?php echo base_url('contact_us'); ?>">Contact Us</a></li>
                             </ul>
                         </div>
                     </div>

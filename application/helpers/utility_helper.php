@@ -324,6 +324,7 @@ function userProfileDetailsdataByUserId($user_id){
             ud.previous_working_area,
             ud.short_bio,
             ud.profile_image,
+            ud.profile_link_name,
             ud.phone_no';  
         
         //Join users_details
@@ -684,4 +685,17 @@ function send_email($emailParam) {
 	}else{
             return false;
 	}
+    }
+    
+    function get_artist_id_by_profile_link_name($profile_link_name){
+        $CI = get_instance();
+        $CI->load->database();
+        $query = $CI->db->select('user_id')
+                ->where('profile_link_name',$profile_link_name)
+            ->get('users_details');
+        if ($query->num_rows() > 0) {
+            return $query->row()->user_id;
+        } else {
+            return false;
+        }
     }

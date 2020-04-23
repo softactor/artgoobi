@@ -2,6 +2,8 @@
 echo $header;
 $profiler = false;
 $user_logged_in = $this->session->userdata('user_logged_id');
+$profile_link_name = $this->session->userdata('profile_link_name');
+$profileLink       = (isset($profile_link_name) && !empty($profile_link_name) ? $profile_link_name : $userProfileDetailsData->profile_link_name);
 if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $users_data->id) {
     $profiler = true;
 }
@@ -30,7 +32,8 @@ if (isset($user_logged_in) && !empty($user_logged_in) && $user_logged_in == $use
                             <div id="faq" class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
                                 <div class="jumbotron text-center">
                                     <h1 class="service_title">
-                                        <?php echo $users_info->name." Artwork" ?>
+                                        <?php echo $users_info->name." Artwork<br>" ?>
+                                        <span style="text-transform: lowercase; font-size: 12px; color: #6c8cc7;" class="profile_link_hints"><?php echo base_url().$profileLink; ?></span>
                                     </h1>
                                 </div>                    
                             </div>

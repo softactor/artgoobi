@@ -67,12 +67,17 @@
                             <?php                                
                                 if (isset($user_logged_in) && !empty($user_logged_in)) {
                                     $logged_in_id = $this->session->userdata('user_logged_id');
+                                    $profile_link_name = $this->session->userdata('profile_link_name');
+                                    $userName          = (isset($profile_link_name) && !empty($profile_link_name) ? $profile_link_name : $this->session->userdata('user_logged_name'));
+                                    $profileLink       = (isset($profile_link_name) && !empty($profile_link_name) ? $profile_link_name : "profile");
                             ?>
                         <li style="margin-top: -2px;">
                             <div class="profile_left_panel_desktop_view">
-                                <a href="<?php echo base_url() ?>profile">
+                                <a href="<?php echo base_url().$profileLink ?>">
                                     <img src="<?php echo base_url(); ?>images/default_avater.png" class="user-image" alt="User Image" width="25" title="<?php echo $this->session->userdata('user_logged_name'); ?>">
-                                    <span style="font-weight: bold;"><?php echo $this->session->userdata('user_logged_name'); ?></span>
+                                    <span style="font-weight: bold;">
+                                        <?php echo $userName; ?>
+                                    </span>
                                 </a>
                             </div>
                             <div class="profile_left_panel_mobile_view">

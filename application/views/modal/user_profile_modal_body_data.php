@@ -12,8 +12,7 @@
         </div>
     </div>
     <div class="form-group">
-        <label>Profile Link Name</label><span> like artgoobi.com/your.profile.link.name</span>
-        <input onkeyup="check_profile_name_availability(this.value);" type="text" name="profile_link_name" class="form-control" placeholder="Enter profile name" value="<?php if(isset($profile_data->profile_link_name) && !empty($profile_data->profile_link_name)){ echo $profile_data->profile_link_name; } ?>">
+        <label>Profile Link </label><span class="profile_link_hints"> http://artgoobi.com/<?php if(isset($profile_data->profile_link_name) && !empty($profile_data->profile_link_name)){ echo $profile_data->profile_link_name; } ?></span>
         <span class="help-block"></span>
     </div>
     <div class="form-group">

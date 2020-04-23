@@ -24,7 +24,7 @@
                     </div>
                     <div class="col-md-5 col-sm-12 col-xs-12 col-lg-5 col-xl-5 exhibition_coloumn_top_gap">
                         <h2 class="post-title">
-                            <a href="<?php echo base_url('welcome/exhibition_details/' . $details_custome_url); ?>"><?php echo $exhibition->title; ?></a>
+                            <a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>"><?php echo $exhibition->title; ?></a>
                         </h2>
                         <div class="exi_date_style">
                             <?php
@@ -48,7 +48,7 @@
                             echo str_short(html_entity_decode($exhibition->descriptions), 350);
                             ?>
                         </p>
-                        <div class="exi_read_more_style"><a href="<?php echo base_url('welcome/exhibition_details/' . $details_custome_url); ?>">Visit</a></div>
+                        <div class="exi_read_more_style"><a href="<?php echo base_url('exhibitions/details/' . $details_custome_url); ?>">Visit</a></div>
                     </div>
                 </div>
                 <!-- /.row -->

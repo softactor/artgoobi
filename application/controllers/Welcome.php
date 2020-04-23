@@ -21,47 +21,6 @@ class Welcome extends CI_Controller {
         $data['footer']                 = $this->load->view('layouts/footer', '', true);
         $this->load->view('single', $data);
     }
-    
-    public function contact_us() {
-        $data['title'] = "Artgoobi | Contact Us";
-        $data['active_menu'] = "contact";
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('contact_us', $data);
-    }
-    public function faq() {
-        $data['title'] = "Artgoobi | FAQ";
-        $data['active_menu'] = "contact";
-        $get_data ['table']                 = "post_data";
-        $get_data ['where']['post_type']    = 4; // Only FAQ Data;
-        $data['faq_data']                   = $this->common_model->common_table_data_read($get_data);
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('faq', $data);
-    }
-    
-    public function about_us() {
-        $data['title'] = "Artgoobi | About Us";
-        $data['active_menu'] = "about";
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', '', true);
-        $this->load->view('about_us', $data);
-    }
-
-    public function index_back() {
-        $data['title'] = "Artgoobi | Home";
-        // Read All User Data
-        $get_data ['table'] = "artwork_info";
-        $get_data ['where']['status'] = 1;
-        $artwork_info = $this->common_model->common_table_data_read($get_data);
-        $data['artwork_info'] = $artwork_info['data'];
-        $data['header'] = $this->load->view('header', $data, true);
-        $data['footer'] = $this->load->view('footer', '', true);
-        $this->load->view('layouts/single', $data);
-    }
 
     public function logging_attempt() {
         // Read All User Data
@@ -120,10 +79,6 @@ class Welcome extends CI_Controller {
             $red_url = base_url() . 'welcome/';
             redirect($red_url);
         }
-    }
-
-    public function admin() {
-        $this->load->view('login');
     }
 
     public function signup_process() {
@@ -347,13 +302,19 @@ class Welcome extends CI_Controller {
             $logged['id'] = $user_info['data'][0]->id;
             $logged['user_email'] = $user_info['data'][0]->user_email;
             $logged['user_type'] = $user_info['data'][0]->user_type;
-
+            
+            $get_data           = [];
+            $get_data ['table'] = "users_details";
+            $get_data ['where']['user_id'] = $user_info['data'][0]->id;
+            $users_details = $this->common_model->common_table_data_read($get_data, null, true);
+            
             $logged_data = array(
                 'user_logged_id' => $user_info['data'][0]->id,
                 'user_logged_name' => $user_info['data'][0]->name,
                 'user_logged_type' => $user_info['data'][0]->user_type,
                 'user_logged_type_name' => get_user_type_name($this->input->post('user_type')),
                 'user_logged_email' => $user_info['data'][0]->user_email,
+                'profile_link_name' => $users_details['data']->profile_link_name,
                 'user_logged_in_status' => TRUE
             );
 
@@ -2292,20 +2253,8 @@ class Welcome extends CI_Controller {
         $redirect_url = base_url() . "welcome/user_profile_work_experience/".$this->input->post('user_id');
         redirect($redirect_url);
         
-    }    
-    // exhibition details area
-    public function exhibition_list(){
-        $data['title'] = "Artgoobi | Exhibition";
-        $data['active_menu'] = "exhibition";
-        $get_data ['table'] = "post_data";
-        $get_data ['where']['post_type'] = 1;
-        $artwork_data = $this->common_model->common_table_data_read($get_data);
-        $data['exhibitions'] =   $artwork_data['data'];
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('exhibition_list', $data);
-    }    
+    } 
+        
     // exhibition details area
     public function exhibition_details($exhibition_id){
         
@@ -2329,21 +2278,7 @@ class Welcome extends CI_Controller {
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         $this->load->view('exhibition_details', $data);
     }
-    public function gallery_list(){   
-        $data['title']                  = "Artgoobi | Gallery";
-        $data['active_menu'] = "gallery";
-        // Read All User Data
         
-        $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 ORDER BY RAND(), create_time DESC";
-        $query                          = $this->db->query($gallery_sql);
-        $data['galleries']              = $query->result();
-        
-        $data['title'] = "Artgoobi | Artwork Details";
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('gallery/gallery_list', $data);
-    }    
     public function gallery_details($gallery_id){
         $gallery_array  =   [];
         $get_data ['table'] = "post_data";
@@ -2383,28 +2318,7 @@ class Welcome extends CI_Controller {
         $data['footer'] = $this->load->view('layouts/footer', $data, true);
         $this->load->view('event_details', $data);
     }    
-    // Event List area
-    public function event_list(){
         
-        $get_data ['table'] = "post_data";
-        $get_data ['where']['post_type'] = 3;
-        $artwork_data = $this->common_model->common_table_data_read($get_data);
-        $data['exhibitions'] =   $artwork_data['data'];
-        $data['title']                  = "Artgoobi | Art around you";
-        $data['active_menu'] = "event";
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', $data, true);
-        $this->load->view('event_list', $data);
-    }
-    public function terms_and_conditions(){
-        $data['active_menu'] = "terms";
-        $data['title'] = "Artgoobi | About Us";
-        $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
-        $data['header'] = $this->load->view('layouts/header', $data, true);
-        $data['footer'] = $this->load->view('layouts/footer', '', true);
-        $this->load->view('terms_condition', $data);
-    }    
     public function user_event_list($artist_id = null){
         $user_logged_in_status = $this->session->userdata('user_logged_in_status');
         $user_logged_in = $this->session->userdata('user_logged_id');
@@ -2823,18 +2737,6 @@ class Welcome extends CI_Controller {
             redirect($redirect_url);
         }
     }
-    
-//    public function get_artwork_search_result(){
-//        $artworkContainer   =  '';
-//        $searchItem =   $this->input->post('search_string');
-//        $searchData     =   select_data_by_search($searchItem);
-//        if(isset($searchData) && !empty($searchData)){
-//            foreach($searchData as $search){
-//            $artworkContainer.="<li><a href='".base_url('welcome/artwork_details/' . $search->artist_id . '/' . $search->id)."'><img src='".base_url('uploads/artwork/resize/' . $search->image_original)."' width=100 />".$search->title.' by '.$search->artist_name."</a></li>";
-//            }
-//        }
-//        echo $artworkContainer;
-//    }
     public function get_artwork_search_result(){
         $artworkinfo   =  '';
         $feedback   =  '';
