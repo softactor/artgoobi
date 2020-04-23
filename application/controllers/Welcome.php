@@ -2873,7 +2873,7 @@ class Welcome extends CI_Controller {
         $profile_name   =   $this->input->post('profile_name');
         $is_profile_name_valid    =   is_profile_name_valid($profile_name);
         if($is_profile_name_valid){
-            $dupData['table']                   =   "users";
+            $dupData['table']                   =   "users_details";
             $dupData['where']['profile_link_name']      =   trim($profile_name);
             $isDuplicate    =   check_duplicate_data($dupData, 'created_at');
             if(!$isDuplicate){
