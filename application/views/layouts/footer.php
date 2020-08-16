@@ -1,6 +1,11 @@
 </div>
 <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12">
-    <?php $this->view('advertisement'); ?>
+    <?php
+        if(isset($gallery_information) && $gallery_information  ==  1){
+            $this->view('partial/gallery_information');
+        }
+        $this->view('advertisement');
+    ?>
 </div>
 </div>
 <div class="row">

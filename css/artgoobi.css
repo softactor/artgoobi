@@ -90,7 +90,8 @@ ul.top_section_profile_access_desktop_style{
 .top_section_profile_access_desktop_style li{
     float: right;
     display: inline;
-    padding: 0 1%;
+    padding: 0 2%;
+    font-size: 18px;
 }
 .stylish-input-group .input-group-addon{
     background: white !important; 
@@ -976,7 +977,7 @@ span#profile_edit_image{
 .custom_search{
     float: right;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 18px;
     line-height: 15px;
     color: #777; 
 }
@@ -1137,6 +1138,14 @@ img.circle_profile_image {
     border-top: 1px solid #f4f4f4;
     padding: 10px;
     background-color: #fff;
+}
+.art_gallery_search .list-group-item{
+    padding: 10px 2px;
+    border: none;
+}
+ul#select2-artist_id-results li{
+    font-size: 10px;
+    text-transform:capitalize;
 }
 
 @keyframes jssorl-009-spin {

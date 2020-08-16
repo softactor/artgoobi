@@ -699,3 +699,13 @@ function send_email($emailParam) {
             return false;
         }
     }
+    
+    function getDataRowByTable($table, $is_status=1){
+        $CI = get_instance();
+        $CI->load->database();
+        
+        $query = $CI->db->select('id')
+                ->where('status',$is_status)
+            ->get($table);
+        return $query->num_rows();
+    }

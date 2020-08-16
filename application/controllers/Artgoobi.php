@@ -110,6 +110,7 @@ class Artgoobi extends CI_Controller {
         $gallery_sql                    = "SELECT * FROM `artwork_info` WHERE status=1 ORDER BY RAND(), create_time DESC";
         $query                          = $this->db->query($gallery_sql);
         $data['galleries']              = $query->result();
+        $data['gallery_information']    = 1;
         
         $data['title'] = "Artgoobi | Artwork Details";
         $data['top_menu'] = $this->load->view('layouts/top_menu', $data, true);
